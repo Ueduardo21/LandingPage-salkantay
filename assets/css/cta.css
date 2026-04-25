@@ -1,0 +1,205 @@
+/* ============================================
+     CTA FLOTANTE INFERIOR - SIMPLE
+     ============================================ */
+
+.floating-cta {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border-radius: 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 229, 181, 0.3);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-cta.show {
+    opacity: 1;
+    visibility: visible;
+    bottom: 30px;
+}
+
+.floating-cta-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 8px 8px 20px;
+}
+
+/* Icono */
+.floating-icon {
+    background: linear-gradient(135deg, #ff4757, #ff6b81);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 1.5s infinite;
+}
+
+.floating-icon i {
+    font-size: 1.2rem;
+    color: white;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 8px rgba(255, 71, 87, 0);
+    }
+}
+
+/* Texto */
+.floating-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-badge {
+    font-size: 0.65rem;
+    color: #ff4757;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.floating-text strong {
+    font-size: 0.85rem;
+    color: white;
+    font-weight: 600;
+}
+
+/* Botón */
+.floating-button {
+    background: linear-gradient(135deg, #00e5b5, #00c4a0);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.floating-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 229, 181, 0.3);
+}
+
+.floating-button i:first-child {
+    font-size: 0.75rem;
+}
+
+.floating-button i:last-child {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.floating-button:hover i:last-child {
+    transform: translateX(4px);
+}
+
+/* Botón cerrar */
+.floating-close {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+}
+
+.floating-close:hover {
+    background: #ff4757;
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .floating-cta-container {
+        padding: 6px 6px 6px 15px;
+        gap: 10px;
+    }
+    
+    .floating-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .floating-icon i {
+        font-size: 1rem;
+    }
+    
+    .floating-text strong {
+        font-size: 0.75rem;
+    }
+    
+    .floating-badge {
+        font-size: 0.55rem;
+    }
+    
+    .floating-button {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+    }
+    
+    .floating-button i:first-child {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .floating-cta {
+        left: 20px;
+        right: 20px;
+        transform: translateX(0);
+        border-radius: 50px;
+    }
+    
+    .floating-cta-container {
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .floating-text {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-cta {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+    }
+    
+    .floating-text strong {
+        font-size: 0.7rem;
+    }
+    
+    .floating-button {
+        padding: 5px 12px;
+        font-size: 0.65rem;
+    }
+}

@@ -1,0 +1,587 @@
+/* ============================================
+     SECCIÓN URGENCIA / ESCASEZ
+     ============================================ */
+
+.urgencia-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #fff5f0 0%, #ffe8e0 100%);
+    position: relative;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Banner Principal */
+.urgencia-banner {
+    background: linear-gradient(135deg, #ff4757, #ff6b81);
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3);
+}
+
+.urgencia-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 30px,
+        rgba(255, 255, 255, 0.1) 30px,
+        rgba(255, 255, 255, 0.1) 60px
+    );
+    animation: bannerMove 20s linear infinite;
+}
+
+@keyframes bannerMove {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(60px);
+    }
+}
+
+.urgencia-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.urgencia-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.urgencia-texto h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.urgencia-texto .highlight {
+    background: white;
+    color: #ff4757;
+    padding: 2px 12px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.urgencia-texto p {
+    opacity: 0.95;
+    font-size: 1rem;
+}
+
+/* Countdown */
+.countdown-container {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px 30px;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 350px;
+}
+
+.countdown-title {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.countdown-block {
+    text-align: center;
+    min-width: 60px;
+}
+
+.countdown-number {
+    font-size: 2rem;
+    font-weight: 800;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-family: monospace;
+}
+
+.countdown-label {
+    font-size: 0.7rem;
+    margin-top: 5px;
+}
+
+.countdown-separator {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/* Grid de Escasez */
+.escasez-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.escasez-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.escasez-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.escasez-card.highlight {
+    border: 2px solid #00e5b5;
+    position: relative;
+    overflow: hidden;
+}
+
+.escasez-card.highlight::before {
+    content: '🔥';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    opacity: 0.3;
+}
+
+.escasez-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 229, 181, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.escasez-icon i {
+    font-size: 1.8rem;
+    color: #00e5b5;
+}
+
+.escasez-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+/* Cupos Bar */
+.cupos-bar {
+    background: #f0f0f0;
+    border-radius: 20px;
+    height: 30px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.cupos-progress {
+    background: linear-gradient(90deg, #ff4757, #ff6b81);
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: width 1s ease;
+}
+
+.cupos-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
+
+.cupos-restantes {
+    color: #ff4757;
+    font-weight: 700;
+}
+
+.cupos-total {
+    color: #888;
+}
+
+.escasez-alerta {
+    background: #fff5f0;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: #ff4757;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Precio Promo */
+.precio-promo {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.precio-antiguo {
+    font-size: 1rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.precio-nuevo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #00e5b5;
+}
+
+.descuento {
+    background: #ff4757;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.promo-timer {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.escasez-bonus {
+    background: linear-gradient(135deg, #00e5b5, #00c4a0);
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Reservas Recientes */
+.reservas-recientes {
+    margin-bottom: 15px;
+}
+
+.reserva-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.reserva-item i {
+    color: #00e5b5;
+    font-size: 0.9rem;
+}
+
+.reserva-item strong {
+    font-size: 0.85rem;
+    color: #1a1a1a;
+}
+
+.reserva-item .tiempo {
+    font-size: 0.7rem;
+    color: #888;
+}
+
+.ver-mas-reservas {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #00e5b5;
+}
+
+/* Alerta Urgente */
+.urgencia-alerta {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border-radius: 16px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.alerta-icon i {
+    font-size: 2rem;
+    color: #ffc107;
+}
+
+.alerta-contenido {
+    flex: 1;
+    color: white;
+}
+
+.alerta-contenido strong {
+    color: #ffc107;
+}
+
+.alerta-boton {
+    background: #00e5b5;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.alerta-boton:hover {
+    transform: translateX(5px);
+    background: #00f5c5;
+}
+
+/* Testimonio */
+.urgencia-testimonio {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.urgencia-testimonio i {
+    font-size: 2rem;
+    color: #00e5b5;
+    opacity: 0.5;
+    margin-bottom: 15px;
+}
+
+.urgencia-testimonio p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.testimonio-autor strong {
+    color: #1a1a1a;
+}
+
+.testimonio-autor span {
+    font-size: 0.8rem;
+    color: #888;
+    display: block;
+    margin-top: 5px;
+}
+
+/* CTA Urgencia */
+.urgencia-cta {
+    background: linear-gradient(135deg, #ff4757, #ff6b81);
+    border-radius: 24px;
+    padding: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.urgencia-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    to {
+        left: 100%;
+    }
+}
+
+.cta-urgencia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-texto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cta-texto i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.cta-texto h4 {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.cta-texto p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-urgencia {
+    background: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1rem;
+    color: #ff4757;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-urgencia span {
+    background: #ff4757;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+}
+
+.btn-urgencia:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .escasez-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .urgencia-banner {
+        padding: 30px;
+    }
+    
+    .urgencia-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .urgencia-texto h2 {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-container {
+        min-width: auto;
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .countdown-number {
+        font-size: 1.5rem;
+        min-width: 45px;
+    }
+    
+    .escasez-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .urgencia-alerta {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cta-urgencia {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cta-texto {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown {
+        gap: 5px;
+    }
+    
+    .countdown-block {
+        min-width: 45px;
+    }
+    
+    .countdown-number {
+        font-size: 1.2rem;
+        padding: 5px 8px;
+    }
+    
+    .btn-urgencia {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
