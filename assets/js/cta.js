@@ -1,130 +1,195 @@
 // ============================================
-// CTA FLOTANTE INFERIOR - ACTUALIZADO
+// CTA FLOTANTE INFERIOR - APARECE DESPUÉS DEL HERO
 // ============================================
 
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
+    'use strict';
     
-    const floatingCTA = document.getElementById('floatingCTA');
-    let isVisible = false;
+    // Configuración
+    const CTA_STORAGE_KEY = 'floatingCTAClosed';
+    const CTA_REAPPEAR_TIME = 2 * 60 * 1000; // 2 minutos en milisegundos
+    
+    let ctaTimeout = null;
+    let scrollTimeout = null;
     
     // ============================================
-    // 1. VERIFICAR SI ESTÁ CERRADO (SOLO EN ESTA SESIÓN)
+    // 1. FUNCIONES PRINCIPALES
     // ============================================
     
-    function isCTAClosed() {
-        // Usamos sessionStorage en lugar de localStorage
-        // sessionStorage se limpia automáticamente al cerrar la pestaña/recargar
-        return sessionStorage.getItem('floatingCTAClosed') === 'true';
+    function showFloatingCTA() {
+        const cta = document.getElementById('floatingCTA');
+        if (cta && !cta.classList.contains('show')) {
+            cta.classList.add('show');
+        }
     }
     
-    // ============================================
-    // 2. MOSTRAR AL HACER SCROLL
-    // ============================================
-    
-    function checkFloatingVisibility() {
-        if (!floatingCTA) return;
-        
-        const scrollPosition = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const pageHeight = document.body.scrollHeight;
-        
-        // Verificar si está cerrado en esta sesión
-        if (isCTAClosed()) return;
-        
-        // Mostrar después de scrollear 400px y antes del footer
-        const footer = document.querySelector('.footer');
-        const footerTop = footer ? footer.offsetTop : pageHeight;
-        const isBeforeFooter = scrollPosition + windowHeight < footerTop - 100;
-        
-        if (scrollPosition > 400 && isBeforeFooter && !isVisible) {
-            floatingCTA.classList.add('show');
-            isVisible = true;
-        } else if ((scrollPosition <= 400 || !isBeforeFooter) && isVisible) {
-            floatingCTA.classList.remove('show');
-            isVisible = false;
+    function hideFloatingCTA() {
+        const cta = document.getElementById('floatingCTA');
+        if (cta && cta.classList.contains('show')) {
+            cta.classList.remove('show');
         }
     }
     
     // ============================================
-    // 3. SCROLL AL TOUR
+    // 2. VERIFICAR SI EL USUARIO CERRÓ EL CTA RECIENTEMENTE
+    // ============================================
+    
+    function isCTARecentlyClosed() {
+        const closedTime = sessionStorage.getItem(CTA_STORAGE_KEY);
+        if (!closedTime) return false;
+        
+        const timePassed = Date.now() - parseInt(closedTime);
+        return timePassed < CTA_REAPPEAR_TIME;
+    }
+    
+    function markCTAAsClosed() {
+        sessionStorage.setItem(CTA_STORAGE_KEY, Date.now().toString());
+        hideFloatingCTA();
+    }
+    
+    // ============================================
+    // 3. REAPARECER DESPUÉS DE 2 MINUTOS
+    // ============================================
+    
+    function scheduleCTAReappear() {
+        if (ctaTimeout) clearTimeout(ctaTimeout);
+        
+        ctaTimeout = setTimeout(() => {
+            // Verificar nuevamente si sigue cerrada la sesión
+            if (isCTARecentlyClosed()) {
+                // Si aún no ha pasado el tiempo, volver a programar
+                const closedTime = parseInt(sessionStorage.getItem(CTA_STORAGE_KEY));
+                const timePassed = Date.now() - closedTime;
+                const remainingTime = CTA_REAPPEAR_TIME - timePassed;
+                
+                if (remainingTime > 0) {
+                    ctaTimeout = setTimeout(() => {
+                        sessionStorage.removeItem(CTA_STORAGE_KEY);
+                        showFloatingCTA();
+                    }, remainingTime);
+                }
+            } else {
+                // Borrar la marca y mostrar
+                sessionStorage.removeItem(CTA_STORAGE_KEY);
+                showFloatingCTA();
+            }
+        }, CTA_REAPPEAR_TIME);
+    }
+    
+    // ============================================
+    // 4. FUNCIÓN PARA CERRAR MANUALMENTE
+    // ============================================
+    
+    window.closeFloatingCTA = function() {
+        markCTAAsClosed();
+        scheduleCTAReappear();
+    };
+    
+    // ============================================
+    // 5. APARECER DESPUÉS DE PASAR EL HERO
+    // ============================================
+    
+    function checkHeroVisibility() {
+        const hero = document.getElementById('home');
+        if (!hero) return;
+        
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        const viewportHeight = window.innerHeight;
+        
+        // Si el usuario ya pasó el hero (scroll más allá del hero)
+        if (heroBottom < viewportHeight / 2) {
+            // Si no está cerrada recientemente, mostrar
+            if (!isCTARecentlyClosed()) {
+                showFloatingCTA();
+            }
+            // Dejar de observar
+            if (heroObserver) heroObserver.disconnect();
+        }
+    }
+    
+    // Observer para detectar cuando se pasa el hero
+    let heroObserver = null;
+    
+    function initHeroObserver() {
+        const hero = document.getElementById('home');
+        if (!hero) {
+            console.warn('⚠️ No se encontró la sección #home');
+            return;
+        }
+        
+        heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Cuando el hero ya no es visible (salió de la pantalla)
+                if (!entry.isIntersecting && entry.boundingClientRect.bottom < 0) {
+                    if (!isCTARecentlyClosed()) {
+                        showFloatingCTA();
+                    }
+                    heroObserver.disconnect();
+                }
+            });
+        }, { threshold: 0 });
+        
+        heroObserver.observe(hero);
+    }
+    
+    // ============================================
+    // 6. SCROLL TO TOUR (función auxiliar)
     // ============================================
     
     window.scrollToTour = function() {
         const tourSection = document.getElementById('tour');
         if (tourSection) {
-            tourSection.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
+            const offsetTop = tourSection.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
             });
-            
-            // Pequeña animación en el botón
-            const btn = document.querySelector('.floating-button');
-            if (btn) {
-                btn.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    btn.style.transform = '';
-                }, 200);
+        } else {
+            // Si no existe #tour, ir a #beneficios
+            const beneficiosSection = document.getElementById('beneficios');
+            if (beneficiosSection) {
+                beneficiosSection.scrollIntoView({ behavior: 'smooth' });
             }
         }
+        // Opcional: cerrar CTA después de hacer scroll
+        // closeFloatingCTA();
     };
     
     // ============================================
-    // 4. CERRAR CTA (SOLO POR ESTA SESIÓN)
+    // 7. INICIALIZACIÓN
     // ============================================
     
-    window.closeFloatingCTA = function() {
-        if (floatingCTA) {
-            floatingCTA.classList.remove('show');
-            isVisible = false;
-            // Guardar en sessionStorage (se borra al recargar la página)
-            sessionStorage.setItem('floatingCTAClosed', 'true');
-        }
-    };
-    
-    // ============================================
-    // 5. EVENTOS DE SCROLL
-    // ============================================
-    
-    window.addEventListener('scroll', checkFloatingVisibility);
-    window.addEventListener('resize', checkFloatingVisibility);
-    window.addEventListener('load', checkFloatingVisibility);
-    
-    // ============================================
-    // 6. MOSTRAR AL SALIR DEL MOUSE (OPCIONAL)
-    // ============================================
-    
-    let mouseLeft = false;
-    document.addEventListener('mouseleave', function(event) {
-        if (event.clientY < 0 && !mouseLeft && !isVisible) {
-            if (!isCTAClosed() && floatingCTA) {
-                floatingCTA.classList.add('show');
-                isVisible = true;
-                mouseLeft = true;
-                setTimeout(() => { mouseLeft = false; }, 1000);
-            }
-        }
-    });
-    
-    // ============================================
-    // 7. ACTUALIZAR CUPOS DINÁMICAMENTE (OPCIONAL)
-    // ============================================
-    
-    let cupos = 8;
-    const cuposElement = document.querySelector('.floating-text strong');
-    
-    function actualizarCupos() {
-        if (cupos > 1 && Math.random() > 0.7) {
-            cupos--;
-            if (cuposElement) {
-                cuposElement.innerHTML = `Últimos ${cupos} cupos · $520 USD`;
-                if (cupos <= 3) {
-                    cuposElement.style.color = '#ff4757';
+    function init() {
+        // Limpiar cualquier timeout previo
+        if (ctaTimeout) clearTimeout(ctaTimeout);
+        
+        // Asegurar que el CTA comienza oculto
+        hideFloatingCTA();
+        
+        // Iniciar observador del hero
+        initHeroObserver();
+        
+        // Verificar si ya se pasó el hero (si la página carga ya scrolleada)
+        setTimeout(() => {
+            const hero = document.getElementById('home');
+            if (hero) {
+                const heroBottom = hero.getBoundingClientRect().bottom;
+                if (heroBottom < 50) {
+                    if (!isCTARecentlyClosed()) {
+                        showFloatingCTA();
+                    }
+                    if (heroObserver) heroObserver.disconnect();
                 }
             }
-        }
+        }, 500);
+        
     }
     
-    // Actualizar cupos cada 5-10 minutos simulando demanda
-    setInterval(actualizarCupos, Math.random() * 300000 + 300000);
+    // Ejecutar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
     
-});
+})();

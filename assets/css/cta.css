@@ -1,9 +1,5 @@
 /* ============================================
-<<<<<<< HEAD
-     CTA FLOTANTE INFERIOR - REDISEÑADO
-=======
-     CTA FLOTANTE INFERIOR - SIMPLE
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
+     CTA FLOTANTE INFERIOR - DISEÑO PREMIUM
      ============================================ */
 
 .floating-cta {
@@ -12,127 +8,53 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
-<<<<<<< HEAD
-    background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
-    border-radius: 80px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 179, 71, 0.3);
-    backdrop-filter: blur(15px);
-=======
     background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
     border-radius: 60px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(0, 229, 181, 0.3);
     backdrop-filter: blur(10px);
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Clase para mostrar el CTA */
 .floating-cta.show {
     opacity: 1;
     visibility: visible;
     bottom: 30px;
 }
 
+/* Contenedor interno */
 .floating-cta-container {
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-    gap: 20px;
-    padding: 12px 12px 12px 25px;
-}
-
-/* ============================================
-   ICONO - MÁS GRANDE
-   ============================================ */
-.floating-icon {
-    background: linear-gradient(135deg, #FFB347, #FF8C42);
-    width: 52px;
-    height: 52px;
-=======
     gap: 15px;
     padding: 8px 8px 8px 20px;
 }
 
-/* Icono */
+/* ============================================
+     ICONO DE FUEGO (ANIMACIÓN PULSO)
+     ============================================ */
 .floating-icon {
     background: linear-gradient(135deg, #ff4757, #ff6b81);
     width: 40px;
     height: 40px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: pulse 1.5s infinite;
-<<<<<<< HEAD
-    box-shadow: 0 4px 15px rgba(255, 179, 71, 0.4);
-}
-
-.floating-icon i {
-    font-size: 1.5rem;
-=======
+    animation: pulseIcon 1.5s infinite;
 }
 
 .floating-icon i {
     font-size: 1.2rem;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: white;
 }
 
-@keyframes pulse {
+@keyframes pulseIcon {
     0%, 100% {
         transform: scale(1);
-<<<<<<< HEAD
-        box-shadow: 0 0 0 0 rgba(255, 179, 71, 0.5);
-    }
-    50% {
-        transform: scale(1.08);
-        box-shadow: 0 0 0 12px rgba(255, 179, 71, 0);
-    }
-}
-
-/* ============================================
-   TEXTO - MÁS GRANDE
-   ============================================ */
-.floating-text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.floating-badge {
-    background: rgba(255, 179, 71, 0.15);
-    display: inline-block;
-    width: fit-content;
-    padding: 3px 10px;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    color: #FFB347;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.floating-text strong {
-    font-size: 1rem;
-    color: white;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-}
-
-/* ============================================
-   BOTÓN - MÁS GRANDE Y LLAMATIVO
-   ============================================ */
-.floating-button {
-    background: linear-gradient(135deg, #FFB347, #FF8C42);
-    border: none;
-    padding: 12px 28px;
-    border-radius: 60px;
-    font-weight: 800;
-    font-size: 0.9rem;
-=======
         box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.4);
     }
     50% {
@@ -141,7 +63,9 @@
     }
 }
 
-/* Texto */
+/* ============================================
+     TEXTO
+     ============================================ */
 .floating-text {
     display: flex;
     flex-direction: column;
@@ -160,7 +84,9 @@
     font-weight: 600;
 }
 
-/* Botón */
+/* ============================================
+     BOTÓN RESERVAR
+     ============================================ */
 .floating-button {
     background: linear-gradient(135deg, #00e5b5, #00c4a0);
     border: none;
@@ -168,52 +94,11 @@
     border-radius: 50px;
     font-weight: 700;
     font-size: 0.8rem;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #1a1a1a;
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
-<<<<<<< HEAD
-    gap: 10px;
-    white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(255, 179, 71, 0.3);
-}
-
-.floating-button i:first-child {
-    font-size: 0.85rem;
-}
-
-.floating-button i:last-child {
-    font-size: 0.8rem;
-    transition: transform 0.3s ease;
-}
-
-.floating-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255, 179, 71, 0.5);
-    background: linear-gradient(135deg, #FF9F2E, #F77F00);
-}
-
-.floating-button:hover i:last-child {
-    transform: translateX(6px);
-}
-
-.floating-button:active {
-    transform: translateY(0);
-}
-
-/* ============================================
-   BOTÓN CERRAR
-   ============================================ */
-.floating-close {
-    background: rgba(255, 255, 255, 0.08);
-    border: none;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    color: rgba(255, 255, 255, 0.5);
-=======
     gap: 8px;
     white-space: nowrap;
 }
@@ -236,7 +121,9 @@
     transform: translateX(4px);
 }
 
-/* Botón cerrar */
+/* ============================================
+     BOTÓN CERRAR
+     ============================================ */
 .floating-close {
     background: rgba(255, 255, 255, 0.1);
     border: none;
@@ -244,95 +131,11 @@
     height: 28px;
     border-radius: 50%;
     color: rgba(255, 255, 255, 0.6);
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-    font-size: 0.8rem;
-}
-
-.floating-close:hover {
-    background: #FF4757;
-    color: white;
-    transform: rotate(90deg);
-    box-shadow: 0 2px 10px rgba(255, 71, 87, 0.4);
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-
-/* Tablet */
-@media (max-width: 768px) {
-    .floating-cta-container {
-        padding: 10px 10px 10px 20px;
-        gap: 15px;
-    }
-    
-    .floating-icon {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .floating-icon i {
-        font-size: 1.3rem;
-    }
-    
-    .floating-text strong {
-        font-size: 0.9rem;
-    }
-    
-    .floating-badge {
-        font-size: 0.65rem;
-    }
-    
-    .floating-button {
-        padding: 10px 22px;
-        font-size: 0.85rem;
-    }
-    
-    .floating-close {
-        width: 30px;
-        height: 30px;
-    }
-}
-
-/* Móvil grande */
-@media (max-width: 600px) {
-    .floating-cta {
-        left: 20px;
-        right: 20px;
-        transform: translateX(0);
-        border-radius: 60px;
-    }
-    
-    .floating-cta-container {
-        justify-content: space-between;
-        width: 100%;
-        padding: 10px 10px 10px 18px;
-        gap: 12px;
-    }
-    
-    .floating-text {
-        flex: 1;
-    }
-}
-
-/* Móvil */
-@media (max-width: 550px) {
-    .floating-cta {
-        bottom: 20px;
-        left: 15px;
-        right: 15px;
-        border-radius: 50px;
-    }
-    
-    .floating-cta-container {
-        padding: 8px 8px 8px 15px;
-=======
     font-size: 0.7rem;
 }
 
@@ -342,65 +145,18 @@
     transform: rotate(90deg);
 }
 
-/* Responsive */
+/* ============================================
+     RESPONSIVE
+     ============================================ */
+
+/* Tablets */
 @media (max-width: 768px) {
     .floating-cta-container {
         padding: 6px 6px 6px 15px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
         gap: 10px;
     }
     
     .floating-icon {
-<<<<<<< HEAD
-        width: 40px;
-        height: 40px;
-    }
-    
-    .floating-icon i {
-        font-size: 1.1rem;
-    }
-    
-    .floating-text strong {
-        font-size: 0.8rem;
-    }
-    
-    .floating-badge {
-        font-size: 0.6rem;
-        padding: 2px 8px;
-    }
-    
-    .floating-button {
-        padding: 8px 18px;
-        font-size: 0.75rem;
-        gap: 6px;
-    }
-    
-    .floating-button i:first-child {
-        font-size: 0.7rem;
-    }
-    
-    .floating-button i:last-child {
-        font-size: 0.65rem;
-    }
-    
-    .floating-close {
-        width: 28px;
-        height: 28px;
-        font-size: 0.7rem;
-    }
-}
-
-/* Móvil pequeño */
-@media (max-width: 450px) {
-    .floating-cta {
-        bottom: 15px;
-        left: 12px;
-        right: 12px;
-    }
-    
-    .floating-text strong {
-        font-size: 0.7rem;
-=======
         width: 35px;
         height: 35px;
     }
@@ -411,7 +167,6 @@
     
     .floating-text strong {
         font-size: 0.75rem;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .floating-badge {
@@ -419,11 +174,6 @@
     }
     
     .floating-button {
-<<<<<<< HEAD
-        padding: 7px 14px;
-        font-size: 0.7rem;
-    }
-=======
         padding: 6px 14px;
         font-size: 0.7rem;
     }
@@ -433,6 +183,7 @@
     }
 }
 
+/* Móviles (ancho variable) */
 @media (max-width: 550px) {
     .floating-cta {
         left: 20px;
@@ -451,6 +202,7 @@
     }
 }
 
+/* Móviles pequeños */
 @media (max-width: 480px) {
     .floating-cta {
         bottom: 15px;
@@ -466,5 +218,4 @@
         padding: 5px 12px;
         font-size: 0.65rem;
     }
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }

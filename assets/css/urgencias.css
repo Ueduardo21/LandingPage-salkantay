@@ -1,5 +1,4 @@
 /* ============================================
-<<<<<<< HEAD
    SECCIÓN: URGENCIA / ESCASEZ - COLORES TOUR
    ============================================ */
 
@@ -9,24 +8,11 @@
 }
 
 .urgencia-section .container {
-=======
-     SECCIÓN URGENCIA / ESCASEZ
-     ============================================ */
-
-.urgencia-section {
-    padding: 60px 0;
-    background: linear-gradient(135deg, #fff5f0 0%, #ffe8e0 100%);
-    position: relative;
-}
-
-.container {
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-<<<<<<< HEAD
 /* ============================================
    BANNER PRINCIPAL
    ============================================ */
@@ -35,51 +21,12 @@
     border-left: 4px solid #00e5b5;
     padding: 30px 35px;
     margin-bottom: 50px;
-=======
-/* Banner Principal */
-.urgencia-banner {
-    background: linear-gradient(135deg, #ff4757, #ff6b81);
-    border-radius: 24px;
-    padding: 40px;
-    margin-bottom: 40px;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3);
-}
-
-.urgencia-banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 30px,
-        rgba(255, 255, 255, 0.1) 30px,
-        rgba(255, 255, 255, 0.1) 60px
-    );
-    animation: bannerMove 20s linear infinite;
-}
-
-@keyframes bannerMove {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(60px);
-    }
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .urgencia-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-<<<<<<< HEAD
     background: rgba(0, 229, 181, 0.1);
     color: #00e5b5;
     padding: 4px 12px;
@@ -88,15 +35,6 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 15px;
-=======
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 20px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .urgencia-content {
@@ -105,7 +43,6 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
-<<<<<<< HEAD
 }
 
 .urgencia-texto {
@@ -140,64 +77,16 @@
     letter-spacing: 1px;
     color: #888;
     margin-bottom: 10px;
-=======
-    position: relative;
-    z-index: 2;
-}
-
-.urgencia-texto h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.urgencia-texto .highlight {
-    background: white;
-    color: #ff4757;
-    padding: 2px 12px;
-    border-radius: 50px;
-    display: inline-block;
-}
-
-.urgencia-texto p {
-    opacity: 0.95;
-    font-size: 1rem;
-}
-
-/* Countdown */
-.countdown-container {
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 20px 30px;
-    border-radius: 20px;
-    text-align: center;
-    min-width: 350px;
-}
-
-.countdown-title {
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .countdown {
     display: flex;
-<<<<<<< HEAD
     gap: 8px;
-=======
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .countdown-block {
     text-align: center;
     min-width: 60px;
-<<<<<<< HEAD
     background: #f8f9fa;
     padding: 8px 0;
     border: 1px solid #f0f0f0;
@@ -226,36 +115,10 @@
 /* ============================================
    GRID DE ESCASEZ
    ============================================ */
-=======
-}
-
-.countdown-number {
-    font-size: 2rem;
-    font-weight: 800;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 8px 12px;
-    border-radius: 12px;
-    font-family: monospace;
-}
-
-.countdown-label {
-    font-size: 0.7rem;
-    margin-top: 5px;
-}
-
-.countdown-separator {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-/* Grid de Escasez */
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 .escasez-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-<<<<<<< HEAD
     margin-bottom: 50px;
 }
 
@@ -263,21 +126,10 @@
     background: #ffffff;
     border: 1px solid #f0f0f0;
     padding: 25px;
-=======
-    margin-bottom: 40px;
-}
-
-.escasez-card {
-    background: white;
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     transition: all 0.3s ease;
 }
 
 .escasez-card:hover {
-<<<<<<< HEAD
     transform: translateY(-3px);
     border-color: #00e5b5;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
@@ -290,36 +142,6 @@
 
 .escasez-icon {
     margin-bottom: 15px;
-=======
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.escasez-card.highlight {
-    border: 2px solid #00e5b5;
-    position: relative;
-    overflow: hidden;
-}
-
-.escasez-card.highlight::before {
-    content: '🔥';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    opacity: 0.3;
-}
-
-.escasez-icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 229, 181, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .escasez-icon i {
@@ -328,21 +150,14 @@
 }
 
 .escasez-card h3 {
-<<<<<<< HEAD
     font-size: 1.1rem;
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 15px;
-=======
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #1a1a1a;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* Cupos Bar */
 .cupos-bar {
-<<<<<<< HEAD
     background: #e9ecef;
     height: 6px;
     margin-bottom: 12px;
@@ -362,44 +177,18 @@
     position: absolute;
     right: 0;
     top: -18px;
-=======
-    background: #f0f0f0;
-    border-radius: 20px;
-    height: 30px;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-
-.cupos-progress {
-    background: linear-gradient(90deg, #ff4757, #ff6b81);
-    border-radius: 20px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 600;
-    transition: width 1s ease;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .cupos-info {
     display: flex;
     justify-content: space-between;
-<<<<<<< HEAD
     margin-bottom: 12px;
     flex-wrap: wrap;
     gap: 8px;
-=======
-    margin-bottom: 15px;
-    font-size: 0.8rem;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .cupos-restantes {
     color: #ff4757;
-<<<<<<< HEAD
     font-size: 0.75rem;
     font-weight: 600;
 }
@@ -430,57 +219,22 @@
     align-items: baseline;
     gap: 10px;
     margin-bottom: 12px;
-=======
-    font-weight: 700;
-}
-
-.cupos-total {
-    color: #888;
-}
-
-.escasez-alerta {
-    background: #fff5f0;
-    padding: 10px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    color: #ff4757;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* Precio Promo */
-.precio-promo {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 15px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     flex-wrap: wrap;
 }
 
 .precio-antiguo {
-<<<<<<< HEAD
     font-size: 0.9rem;
-=======
-    font-size: 1rem;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #999;
     text-decoration: line-through;
 }
 
 .precio-nuevo {
-<<<<<<< HEAD
     font-size: 1.6rem;
-=======
-    font-size: 1.8rem;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     font-weight: 800;
     color: #00e5b5;
 }
 
 .descuento {
-<<<<<<< HEAD
     background: rgba(0, 229, 181, 0.1);
     color: #00e5b5;
     padding: 2px 8px;
@@ -512,72 +266,23 @@
     color: #00e5b5;
     padding-top: 10px;
     border-top: 1px solid #f0f0f0;
-=======
-    background: #ff4757;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 700;
-}
-
-.promo-timer {
-    background: #f8f9fa;
-    padding: 10px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    margin-bottom: 15px;
-}
-
-.escasez-bonus {
-    background: linear-gradient(135deg, #00e5b5, #00c4a0);
-    padding: 10px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    color: #1a1a1a;
-    display: flex;
-    align-items: center;
-    gap: 8px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* Reservas Recientes */
 .reservas-recientes {
-<<<<<<< HEAD
     margin-bottom: 12px;
-=======
-    margin-bottom: 15px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .reserva-item {
     display: flex;
     align-items: center;
     gap: 10px;
-<<<<<<< HEAD
     padding: 8px 0;
     border-bottom: 1px solid #f0f0f0;
-=======
-    padding: 10px 0;
-    border-bottom: 1px solid #f0f0f0;
-    animation: slideIn 0.5s ease;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .reserva-item i {
     color: #00e5b5;
-<<<<<<< HEAD
     font-size: 0.8rem;
 }
 
@@ -611,41 +316,11 @@
    BANNER DE ALERTA
    ============================================ */
 .urgencia-alerta {
-=======
-    font-size: 0.9rem;
-}
-
-.reserva-item strong {
-    font-size: 0.85rem;
-    color: #1a1a1a;
-}
-
-.reserva-item .tiempo {
-    font-size: 0.7rem;
-    color: #888;
-}
-
-.ver-mas-reservas {
-    background: #f8f9fa;
-    padding: 10px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    text-align: center;
-    color: #00e5b5;
-}
-
-/* Alerta Urgente */
-.urgencia-alerta {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    border-radius: 16px;
-    padding: 20px 30px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
-<<<<<<< HEAD
     background: #f8f9fa;
     padding: 15px 25px;
     margin-bottom: 50px;
@@ -654,19 +329,11 @@
 
 .alerta-icon i {
     font-size: 1.2rem;
-=======
-    margin-bottom: 40px;
-}
-
-.alerta-icon i {
-    font-size: 2rem;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #ffc107;
 }
 
 .alerta-contenido {
     flex: 1;
-<<<<<<< HEAD
     font-size: 0.85rem;
     color: #555;
 }
@@ -731,167 +398,56 @@
 }
 
 /* ============================================
-   CTA FINAL - URGENCIA (VERSIÓN GRANDE)
+   CTA FINAL
    ============================================ */
-
 .urgencia-cta {
-    margin-top: 20px;
-=======
-    color: white;
-}
-
-.alerta-contenido strong {
-    color: #ffc107;
-}
-
-.alerta-boton {
-    background: #00e5b5;
-    color: #1a1a1a;
-    text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.alerta-boton:hover {
-    transform: translateX(5px);
-    background: #00f5c5;
-}
-
-/* Testimonio */
-.urgencia-testimonio {
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    margin-bottom: 40px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-.urgencia-testimonio i {
-    font-size: 2rem;
-    color: #00e5b5;
-    opacity: 0.5;
-    margin-bottom: 15px;
-}
-
-.urgencia-testimonio p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto 20px;
-}
-
-.testimonio-autor strong {
-    color: #1a1a1a;
-}
-
-.testimonio-autor span {
-    font-size: 0.8rem;
-    color: #888;
-    display: block;
-    margin-top: 5px;
-}
-
-/* CTA Urgencia */
-.urgencia-cta {
-    background: linear-gradient(135deg, #ff4757, #ff6b81);
-    border-radius: 24px;
-    padding: 35px;
-    position: relative;
-    overflow: hidden;
-}
-
-.urgencia-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    animation: shine 3s infinite;
-}
-
-@keyframes shine {
-    to {
-        left: 100%;
-    }
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
+    margin-top: 10px;
 }
 
 .cta-urgencia {
     display: flex;
-<<<<<<< HEAD
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 25px;
-    background: #f8f9fa;
-    padding: 35px 45px;
-    border: 1px solid #f0f0f0;
-=======
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    position: relative;
-    z-index: 2;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
+    background: #f8f9fa;
+    padding: 25px 30px;
+    border: 1px solid #f0f0f0;
 }
 
 .cta-texto {
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-    gap: 20px;
-=======
     gap: 15px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .cta-texto i {
-    font-size: 2.5rem;
-<<<<<<< HEAD
+    font-size: 1.5rem;
     color: #00e5b5;
 }
 
 .cta-texto h4 {
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #1a1a1a;
-=======
-    color: white;
-}
-
-.cta-texto h4 {
-    font-size: 1.3rem;
-    color: white;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .cta-texto p {
-<<<<<<< HEAD
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #666;
 }
 
 .btn-urgencia {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     background: #00e5b5;
     border: none;
-    padding: 16px 35px;
+    padding: 12px 28px;
     color: #1a1a1a;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-weight: 600;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -899,17 +455,17 @@
 .btn-urgencia span {
     background: #1a1a1a;
     color: #00e5b5;
-    padding: 4px 10px;
-    font-size: 0.75rem;
+    padding: 2px 8px;
+    font-size: 0.65rem;
     font-weight: 700;
-    margin-left: 8px;
+    margin-left: 5px;
 }
 
 .btn-urgencia:hover {
     background: #00c4a0;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 229, 181, 0.3);
+    transform: translateY(-2px);
 }
+
 /* ============================================
    RESPONSIVE
    ============================================ */
@@ -917,58 +473,16 @@
     .escasez-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-=======
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.btn-urgencia {
-    background: white;
-    border: none;
-    padding: 15px 35px;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 1rem;
-    color: #ff4757;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btn-urgencia span {
-    background: #ff4757;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 50px;
-    font-size: 0.7rem;
-}
-
-.btn-urgencia:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .escasez-grid {
-        grid-template-columns: repeat(2, 1fr);
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
     .urgencia-section {
         padding: 40px 0;
     }
     
     .urgencia-banner {
         padding: 20px;
-=======
-    .urgencia-banner {
-        padding: 30px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .urgencia-content {
@@ -976,24 +490,8 @@
         text-align: center;
     }
     
-<<<<<<< HEAD
     .countdown {
         justify-content: center;
-=======
-    .urgencia-texto h2 {
-        font-size: 1.5rem;
-    }
-    
-    .countdown-container {
-        min-width: auto;
-        width: 100%;
-        padding: 15px;
-    }
-    
-    .countdown-number {
-        font-size: 1.5rem;
-        min-width: 45px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .escasez-grid {
@@ -1008,38 +506,22 @@
     .cta-urgencia {
         flex-direction: column;
         text-align: center;
-<<<<<<< HEAD
         padding: 20px;
-=======
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .cta-texto {
         flex-direction: column;
-<<<<<<< HEAD
         text-align: center;
-=======
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }
 
 @media (max-width: 480px) {
-<<<<<<< HEAD
     .countdown-block {
         min-width: 50px;
-=======
-    .countdown {
-        gap: 5px;
-    }
-    
-    .countdown-block {
-        min-width: 45px;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .countdown-number {
         font-size: 1.2rem;
-<<<<<<< HEAD
     }
     
     .precio-nuevo {
@@ -1049,13 +531,5 @@
     .btn-urgencia {
         padding: 10px 20px;
         font-size: 0.8rem;
-=======
-        padding: 5px 8px;
-    }
-    
-    .btn-urgencia {
-        padding: 12px 25px;
-        font-size: 0.9rem;
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }

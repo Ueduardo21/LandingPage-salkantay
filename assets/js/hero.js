@@ -1,35 +1,56 @@
-// Manejo optimizado de video de fondo
+/* ============================================
+     HERO.JS - VIDEO RESPONSIVE (CORREGIDO)
+     ============================================ */
+
 document.addEventListener('DOMContentLoaded', function() {
     const video = document.querySelector('.hero-video');
     
-    if (video) {
-        // Detectar si es dispositivo móvil
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (!video) return;
+    
+    // Detectar dispositivo móvil
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // IMPORTANTE: Asegurar que el video tenga muted
+    video.muted = true;
+    video.playsInline = true;  // Para iOS
+    
+    if (isMobile) {
+        // En móviles: NO ocultar, solo asegurar reproducción
+        video.style.display = 'block';  // ← NO lo ocultes
+        video.style.opacity = '0.95';
         
-        if (isMobile) {
-            // En móviles, pausar el video para ahorrar recursos
-            video.pause();
-            video.style.display = 'none';
-        } else {
-            // En desktop, asegurar que el video se reproduzca
-            video.play().catch(function(error) {
-                console.log("Autoplay prevented:", error);
-                // Si no puede reproducir automáticamente, mostrar overlay solamente
-                video.style.opacity = '0.5';
-            });
-        }
-        
-        // Pausar video cuando no está visible (ahorra recursos)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            });
+        // Intentar reproducir
+        video.play().then(() => {
+            console.log('Video reproduciéndose en móvil');
+        }).catch((error) => {
+            console.log('Error en móvil:', error);
+            // Si falla, mostrar mensaje o imagen de respaldo
+            video.style.opacity = '0.5';
         });
-        
-        observer.observe(video);
+    } else {
+        // En desktop
+        video.play().catch((error) => {
+            console.log('Autoplay bloqueado en desktop:', error);
+        });
     }
+    
+    // Pausar video cuando no está visible (ahorra recursos)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.play().catch(e => console.log('Play prevented:', e));
+            } else {
+                video.pause();
+            }
+        });
+    });
+    
+    observer.observe(video);
+    
+    // Reanudar cuando la página vuelve a ser visible
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden && video.paused) {
+            video.play().catch(e => console.log('Play on visibility change:', e));
+        }
+    });
 });

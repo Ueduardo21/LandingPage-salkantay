@@ -1,55 +1,65 @@
 // ============================================
-<<<<<<< HEAD
-// FOOTER - AÑO ACTUAL
-=======
-// FOOTER - JAVASCRIPT
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
+// FOOTER - ANIMACIONES AL SCROLL
 // ============================================
 
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
+    'use strict';
     
-<<<<<<< HEAD
-    // Año actual
-    const yearElement = document.getElementById('currentYear');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
-    
-=======
-    // 1. Actualizar año automático en copyright
-    const yearSpan = document.querySelector('.footer-bottom p');
-    if (yearSpan) {
-        const currentYear = new Date().getFullYear();
-        yearSpan.innerHTML = yearSpan.innerHTML.replace('2024', currentYear);
-    }
-    
-    // 2. Función para seleccionar tour desde footer
-    window.selectTour = function(tourId) {
-        // Cambiar a la sección de tours
-        const tourSection = document.getElementById('tour');
-        if (tourSection) {
-            tourSection.scrollIntoView({ behavior: 'smooth' });
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // ============================================
+        // 1. ACTUALIZAR AÑO ACTUAL
+        // ============================================
+        
+        const yearSpan = document.getElementById('currentYear');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
         }
         
-        // Cambiar el selector de tours
-        setTimeout(() => {
-            const tourBtns = document.querySelectorAll('.tour-btn');
-            const tourContents = document.querySelectorAll('.tour-content');
+        // ============================================
+        // 2. ANIMACIÓN DE ENTRADA AL SCROLL
+        // ============================================
+        
+        const footerCols = document.querySelectorAll('.footer-col');
+        
+        if (footerCols.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
             
-            tourBtns.forEach(btn => {
-                if (btn.getAttribute('data-tour') === tourId) {
-                    btn.click();
+            footerCols.forEach(col => {
+                observer.observe(col);
+            });
+        }
+        
+        // ============================================
+        // 3. SCROLL SUAVE PARA ENLACES DEL FOOTER
+        // ============================================
+        
+        const footerLinks = document.querySelectorAll('.footer-logo, .footer a[href^="#"]');
+        
+        footerLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#' && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
-        }, 500);
-    };
-    
-    // 3. Animación de hover en redes sociales
-    const socialLinks = document.querySelectorAll('.footer-social a');
-    socialLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.3s ease';
         });
+        
     });
->>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
-});
+    
+})();
