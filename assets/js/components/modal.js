@@ -6,9 +6,16 @@
 // DETECCIÓN AUTOMÁTICA DE RUTAS
 // ============================================
 
+//Culqi.publicKey = 'pk_test_AQUI_TU_LLAVE_PUBLICA';
+
 // Ruta base de tu proyecto en localhost
 // Si tu index.php está en: http://localhost/salka/LandingPageSalka/index.php
-const PROYECT_URL = '/salka/LandingPageSalka';
+//const PROYECT_URL = '/salka/LandingPageSalka';
+
+// Rutas del proyecto
+const PROYECT_URL = '/landing-salka';
+
+
 
 // Variables globales
 let currentPaso = 1;
@@ -280,29 +287,26 @@ function verTerminos(event) {
     alert('📋 Términos y condiciones:\n\n• Cancelación gratuita hasta 24h antes\n• Responsabilidad del viajero sobre sus documentos\n• Seguro de viaje recomendado\n• Precios sujetos a disponibilidad');
 }
 
+// Funcion para el envio en la reserva
 async function submitReserva(event) {
     event.preventDefault();
-    
+
     const terminos = document.getElementById('terminos_reserva');
-    if(!terminos?.checked) {
+    if (!terminos?.checked) {
         alert('Debes aceptar los términos y condiciones para continuar');
         return;
     }
-    
+
     const submitBtn = document.getElementById('btnSubmit');
-    const prevBtn = document.getElementById('btnPrev');
-    const nextBtn = document.getElementById('btnNext');
-    const originalText = submitBtn?.innerHTML || 'Confirmar';
-    
+    const originalText = submitBtn?.innerHTML || 'Confirmar Reserva';
+
     if (submitBtn) {
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
         submitBtn.disabled = true;
     }
-    if (prevBtn) prevBtn.disabled = true;
-    if (nextBtn) nextBtn.disabled = true;
-    
+
     const formData = {
-        tour_name: document.getElementById('tourReservaName')?.value || '',
+        tour_name: document.getElementById('tourReservaName')?.value || 'Machu Picchu Tour',
         tipo_documento: document.getElementById('tipo_documento')?.value || '',
         documento: document.getElementById('documento')?.value || '',
         nombre_completo: document.getElementById('nombre_completo')?.value || '',
@@ -317,50 +321,128 @@ async function submitReserva(event) {
         tipo_servicio: document.querySelector('input[name="tipo_servicio"]:checked')?.value || 'grupal',
         personas: document.getElementById('personas')?.value || '1',
         requerimientos: document.getElementById('requerimientos')?.value || '',
-        metodo_pago: document.querySelector('input[name="metodo_pago"]:checked')?.value || 'Tarjeta'
+        metodo_pago: (document.querySelector('input[name="metodo_pago"]:checked')?.value || 'tarjeta').toLowerCase(),
+        terminos: terminos.checked ? '1' : ''
     };
-    
-    if(formData.metodo_pago === 'Tarjeta') {
-        formData.numero_tarjeta = document.getElementById('numero_tarjeta')?.value || '';
-        formData.vencimiento = document.getElementById('vencimiento')?.value || '';
-        formData.cvv = document.getElementById('cvv')?.value || '';
-        formData.nombre_tarjeta = document.getElementById('nombre_tarjeta')?.value || '';
-    } else if(formData.metodo_pago === 'Yape') {
-        formData.yape_phone = document.getElementById('yape_phone')?.value || '';
-        formData.yape_code = document.getElementById('yape_code')?.value || '';
-    } else if(formData.metodo_pago === 'Plin') {
-        formData.plin_phone = document.getElementById('plin_phone')?.value || '';
-        formData.plin_code = document.getElementById('plin_code')?.value || '';
-    }
-    
+
+    const personas = parseInt(formData.personas || '1');
+    const precioBase = formData.tipo_servicio === 'grupal' ? 520 : 850;
+    //const totalCentimos = personas * precioBase * 100;
+
+
+    // 🔥 AQUÍ LO CAMBIAS PARA PRUEBA
+    const totalCentimos = 600; // S/6.00
+
     try {
-        // ✅ Ruta CORRECTA para tu estructura
-        const apiUrl = PROYECT_URL + '/process/procesar-reserva-ajax.php';
-        
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        });
-        
-        const result = await response.json();
-        
-        if(result.success) {
-            alert('✅ ¡Reserva confirmada! En breve recibirás un correo con los detalles y voucher.');
-            closeReservaModal();
+        if (formData.metodo_pago === 'tarjeta') {
+
+            Culqi.publicKey = 'pk_test_AQUI_TU_LLAVE_PUBLICA';
+
+            Culqi.settings({
+                title: 'Machu Picchu Tour',
+                currency: 'PEN', // USD
+                amount: totalCentimos
+            });
+
+            Culqi.options({
+                lang: 'auto',
+                installments: false,
+                paymentMethods: {
+                    tarjeta: true,
+                    yape: false,
+                    billetera: false
+                }
+            });
+
+            window.culqi = async function () {
+                if (Culqi.token) {
+                    const token = Culqi.token.id;
+
+                    const pagoResponse = await fetch(PROYECT_URL + '/process/procesar-pago-culqi.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            token: token,
+                            email: formData.email,
+                            amount: totalCentimos
+                        })
+                    });
+
+                    const pagoResult = await pagoResponse.json();
+
+                    if (!pagoResult.success) {
+                        alert('❌ Pago rechazado: ' + pagoResult.message);
+                        return;
+                    }
+
+                    const reservaResponse = await fetch(PROYECT_URL + '/process/procesar-reserva-ajax.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const reservaResult = await reservaResponse.json();
+
+                    if (reservaResult.success) {
+                        alert(`✅ Pago + Reserva completada\nCódigo: ${reservaResult.codigo_reserva}`);
+                        closeReservaModal();
+                    } else {
+                        alert('⚠️ Pago OK, pero error al registrar reserva: ' + reservaResult.message);
+                    }
+                } else {
+                    alert('❌ Error Culqi: ' + (Culqi.error?.user_message || 'No se pudo generar token'));
+                }
+            };
+
+            Culqi.open();
+
+        } else if (formData.metodo_pago === 'yape') {
+
+            formData.yape_phone = document.getElementById('yape_phone')?.value || '';
+            formData.yape_code = document.getElementById('yape_code')?.value || '';
+
+            await registrarReservaNormal(formData);
+
+        } else if (formData.metodo_pago === 'plin') {
+
+            formData.plin_phone = document.getElementById('plin_phone')?.value || '';
+            formData.plin_code = document.getElementById('plin_code')?.value || '';
+
+            await registrarReservaNormal(formData);
+
         } else {
-            alert('❌ Error: ' + result.message);
+
+            await registrarReservaNormal(formData);
         }
-    } catch(error) {
-        console.error('Error:', error);
-        alert('❌ Error de conexión. Por favor, intenta de nuevo más tarde.');
+
+    } catch (error) {
+        console.error('ERROR REAL:', error);
+        alert('❌ Error: ' + error.message);
     } finally {
         if (submitBtn) {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         }
-        if (prevBtn) prevBtn.disabled = false;
-        if (nextBtn) nextBtn.disabled = false;
+    }
+}
+
+async function registrarReservaNormal(formData) {
+    const response = await fetch(PROYECT_URL + '/process/procesar-reserva-ajax.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    });
+
+    const text = await response.text();
+    console.log('RESPUESTA PHP:', text);
+
+    const result = JSON.parse(text);
+
+    if (result.success) {
+        alert(`✅ Reserva registrada\nCódigo: ${result.codigo_reserva}`);
+        closeReservaModal();
+    } else {
+        alert('❌ Error: ' + result.message);
     }
 }
 

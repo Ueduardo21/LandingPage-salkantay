@@ -26,12 +26,12 @@ class GmailSender
 {
     private $mail;
     private $error = null;
-    
+
     public function __construct()
     {
         $this->initializeMailer();
     }
-    
+
     private function initializeMailer()
     {
         // Verificar que PHPMailer está disponible
@@ -39,9 +39,9 @@ class GmailSender
             error_log("PHPMailer no está instalado. Ejecuta: composer require phpmailer/phpmailer");
             return;
         }
-        
+
         $this->mail = new PHPMailer(true);
-        
+
         try {
             // Configuración del servidor
             $this->mail->SMTPDebug = SMTP::DEBUG_OFF;
@@ -52,20 +52,19 @@ class GmailSender
             $this->mail->Password   = SMTP_PASS;
             $this->mail->SMTPSecure = SMTP_SECURE;
             $this->mail->Port       = SMTP_PORT;
-            
+
             // Configuración de codificación
             $this->mail->setLanguage('es');
             $this->mail->CharSet = 'UTF-8';
-            
+
             // Remitente
             $this->mail->setFrom(FROM_EMAIL, FROM_NAME);
-            
         } catch (Exception $e) {
             $this->error = $e->getMessage();
             error_log("Error inicializando PHPMailer: " . $this->error);
         }
     }
-    
+
     /**
      * Enviar correo de consulta
      */
@@ -76,33 +75,32 @@ class GmailSender
             if (!$this->mail) {
                 throw new Exception("PHPMailer no inicializado correctamente");
             }
-            
+
             // Para el administrador
             $this->mail->clearAddresses();
             $this->mail->addAddress(ADMIN_EMAIL, ADMIN_NAME);
             $this->mail->addReplyTo($data['email'], $data['name']);
-            
+
             $this->mail->Subject = '📧 Nueva Consulta - Tour Machu Picchu';
-            
+
             // Cuerpo del email
             $body = $this->buildEnquiryEmailBody($data);
             $this->mail->isHTML(true);
             $this->mail->Body = $body;
             $this->mail->AltBody = strip_tags($body);
-            
+
             $this->mail->send();
-            
+
             // Enviar confirmación al cliente
             $this->sendCustomerConfirmation($data);
-            
+
             return ['success' => true, 'message' => 'Consulta enviada correctamente'];
-            
         } catch (Exception $e) {
             error_log("Error enviando email de consulta: " . $this->mail->ErrorInfo);
             return ['success' => false, 'message' => $this->mail->ErrorInfo];
         }
     }
-    
+
     /**
      * Enviar correo de reserva
      */
@@ -112,33 +110,32 @@ class GmailSender
             if (!$this->mail) {
                 throw new Exception("PHPMailer no inicializado correctamente");
             }
-            
+
             // Para el administrador
             $this->mail->clearAddresses();
             $this->mail->addAddress(ADMIN_EMAIL, ADMIN_NAME);
             $this->mail->addReplyTo($data['email'], $data['nombre_completo']);
-            
+
             $this->mail->Subject = '📅 Nueva Reserva - Tour Machu Picchu';
-            
+
             // Cuerpo del email
             $body = $this->buildReservationEmailBody($data);
             $this->mail->isHTML(true);
             $this->mail->Body = $body;
             $this->mail->AltBody = strip_tags($body);
-            
+
             $this->mail->send();
-            
+
             // Enviar confirmación al cliente
             $this->sendCustomerReservationConfirmation($data);
-            
+
             return ['success' => true, 'message' => 'Reserva enviada correctamente'];
-            
         } catch (Exception $e) {
             error_log("Error enviando email de reserva: " . $this->mail->ErrorInfo);
             return ['success' => false, 'message' => $this->mail->ErrorInfo];
         }
     }
-    
+
     /**
      * Enviar confirmación al cliente (consulta)
      */
@@ -156,7 +153,7 @@ class GmailSender
             error_log("Error enviando confirmación al cliente: " . $this->mail->ErrorInfo);
         }
     }
-    
+
     /**
      * Enviar confirmación al cliente (reserva)
      */
@@ -174,7 +171,7 @@ class GmailSender
             error_log("Error enviando confirmación de reserva al cliente: " . $this->mail->ErrorInfo);
         }
     }
-    
+
     /**
      * Construir cuerpo del email de consulta (admin)
      */
@@ -182,7 +179,7 @@ class GmailSender
     {
         $date = $data['date'] ?? 'No especificada';
         $people = $data['people'] ?? '1';
-        
+
         return "
         <!DOCTYPE html>
         <html>
@@ -240,16 +237,16 @@ class GmailSender
         </html>
         ";
     }
-    
-    /**
-     * Construir cuerpo del email de reserva (admin)
-     */
+
+    /*
+    Construir cuerpo del email de reserva (admin)
+    */
     private function buildReservationEmailBody($data)
     {
         $precio_persona = $data['tipo_servicio'] === 'grupal' ? 520 : 850;
         $total = $precio_persona * $data['personas'];
         $fecha_alternativa = $data['fecha_alternativa'] ?? 'No aplica';
-        
+
         return "
         <!DOCTYPE html>
         <html>
@@ -313,7 +310,7 @@ class GmailSender
         </html>
         ";
     }
-    
+
     /**
      * Construir confirmación para el cliente (consulta)
      */
@@ -354,7 +351,7 @@ class GmailSender
         </html>
         ";
     }
-    
+
     /**
      * Construir confirmación para el cliente (reserva)
      */
@@ -362,7 +359,7 @@ class GmailSender
     {
         $precio_persona = $data['tipo_servicio'] === 'grupal' ? 520 : 850;
         $total = $precio_persona * $data['personas'];
-        
+
         return "
         <!DOCTYPE html>
         <html>
@@ -408,4 +405,3 @@ class GmailSender
         ";
     }
 }
-?>

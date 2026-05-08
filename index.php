@@ -2147,10 +2147,13 @@ if (file_exists(__DIR__ . '/config.php')) {
     <script src="assets/js/galeria.js"></script>
     <script src="assets/js/beneficios.js"></script>
     <script src="assets/js/urgencias.js"></script>
+    <script src="https://checkout.culqi.com/js/v4"></script>
     <script src="assets/js/components/modal.js"></script>
     <script src="assets/js/faq.js"></script>
     <script src="assets/js/cta.js"></script>
     <script src="assets/js/footer.js"></script>
+
+   
 
 </body>
 </html>
