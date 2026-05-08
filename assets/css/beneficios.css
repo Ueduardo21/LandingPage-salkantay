@@ -1,5 +1,5 @@
 /* ============================================
-     SECCIÓN BENEFICIOS CLAVE
+     SECCIÓN BENEFICIOS CLAVE - DISEÑO ELEGANTE
      ============================================ */
 
 .beneficios-section {
@@ -20,7 +20,7 @@
     pointer-events: none;
 }
 
-.container {
+.beneficios-section .container {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
@@ -34,15 +34,14 @@
 
 .section-subtitle {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: #00e5b5;
     font-weight: 700;
     margin-bottom: 15px;
     background: rgba(0, 229, 181, 0.1);
     padding: 5px 15px;
-    border-radius: 50px;
 }
 
 .section-header h2 {
@@ -56,11 +55,12 @@
     color: #00e5b5;
     border-bottom: 3px solid #00e5b5;
     display: inline-block;
+    padding-bottom: 4px;
 }
 
 .section-header p {
     color: #666;
-    font-size: 1.1rem;
+    font-size: 1rem;
     max-width: 700px;
     margin: 0 auto;
 }
@@ -75,13 +75,11 @@
 
 .beneficio-card {
     background: white;
-    border-radius: 24px;
     padding: 30px 25px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    border: 1px solid #f0f0f0;
 }
 
 .beneficio-card::before {
@@ -90,15 +88,15 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #00e5b5, #00c4a0);
+    height: 3px;
+    background: #00e5b5;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 .beneficio-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    border-color: #00e5b5;
 }
 
 .beneficio-card:hover::before {
@@ -107,8 +105,8 @@
 
 .beneficio-icon {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
@@ -116,7 +114,7 @@
 }
 
 .beneficio-icon i {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #00e5b5;
     z-index: 2;
 }
@@ -126,143 +124,47 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 229, 181, 0.1);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(0.95);
-        opacity: 0.5;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0.95);
-        opacity: 0.5;
-    }
+.beneficio-card:hover .icon-bg {
+    transform: rotate(45deg) scale(1.1);
+    background: rgba(0, 229, 181, 0.2);
 }
 
 .beneficio-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: #1a1a1a;
 }
 
 .beneficio-card p {
     color: #666;
     line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
+    margin-bottom: 18px;
+    font-size: 0.85rem;
 }
 
 .beneficio-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 6px 15px;
+    gap: 6px;
+    padding: 5px 12px;
     background: #f8f9fa;
-    border-radius: 50px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: #00e5b5;
-}
-
-.beneficio-badge i {
-    font-size: 0.8rem;
-}
-
-/* Beneficios Adicionales */
-.beneficios-adicionales {
-    margin-bottom: 60px;
-}
-
-.section-subtitle-center {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 30px;
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-
-.section-subtitle-center::before,
-.section-subtitle-center::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #00e5b5, transparent);
-}
-
-.section-subtitle-center::before {
-    left: calc(50% - 100px);
-}
-
-.section-subtitle-center::after {
-    right: calc(50% - 100px);
-}
-
-@media (max-width: 768px) {
-    .section-subtitle-center::before,
-    .section-subtitle-center::after {
-        display: none;
-    }
-}
-
-.adicionales-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.adicional-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease;
-}
-
-.adicional-item:hover {
-    transform: translateX(5px);
-    background: #f8f9fa;
-}
-
-.adicional-item i {
-    font-size: 1.5rem;
-    color: #00e5b5;
-    min-width: 40px;
-}
-
-.adicional-item strong {
-    display: block;
-    font-size: 0.9rem;
-    margin-bottom: 4px;
-    color: #1a1a1a;
-}
-
-.adicional-item span {
-    font-size: 0.8rem;
-    color: #888;
+    border: 1px solid #e0e0e0;
 }
 
 /* Tabla Comparativa */
 .comparison-table {
     background: white;
-    border-radius: 24px;
     padding: 30px;
     margin-bottom: 50px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
 }
 
 .comparison-header {
@@ -271,7 +173,7 @@
 }
 
 .comparison-header h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 8px;
     color: #1a1a1a;
 }
@@ -283,7 +185,7 @@
 
 .comparison-header p {
     color: #666;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .table-wrapper {
@@ -297,7 +199,7 @@
 
 .comparison-grid th,
 .comparison-grid td {
-    padding: 15px;
+    padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #f0f0f0;
 }
@@ -308,14 +210,6 @@
     background: #f8f9fa;
 }
 
-.comparison-grid th:first-child {
-    border-radius: 12px 0 0 12px;
-}
-
-.comparison-grid th:last-child {
-    border-radius: 0 12px 12px 0;
-}
-
 .comparison-grid td:first-child {
     font-weight: 600;
     color: #1a1a1a;
@@ -323,101 +217,89 @@
 
 .comparison-grid td i.fa-check-circle {
     color: #00e5b5;
-    font-size: 1.1rem;
 }
 
 .comparison-grid td i.fa-times-circle {
     color: #ff4757;
-    font-size: 1.1rem;
 }
 
 .comparison-grid td i.fa-clock,
 .comparison-grid td i.fa-question-circle {
     color: #ffc107;
-    font-size: 1.1rem;
 }
 
-/* CTA Final */
+/* ============================================
+   CTA FINAL - SIN FONDO, LETRAS GRANDES
+   ============================================ */
+
 .beneficios-cta {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    border-radius: 24px;
-    padding: 50px;
+    background: transparent;
+    padding: 60px 20px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.beneficios-cta::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 229, 181, 0.1), transparent);
-    animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 .cta-content {
-    position: relative;
-    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .cta-content i {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #00e5b5;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: inline-block;
 }
 
 .cta-content h4 {
-    font-size: 1.6rem;
-    color: white;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
 
 .cta-content p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 25px;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
 }
 
 .btn-cta {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 14px 35px;
-    background: #00e5b5;
-    color: #1a1a1a;
+    gap: 12px;
+    padding: 14px 38px;
+    background: #1a1a1a;
+    color: white;
     text-decoration: none;
-    font-weight: 700;
-    border-radius: 50px;
-    transition: all 0.3s ease;
+    font-weight: 600;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-cta i {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    transition: transform 0.2s ease;
 }
 
 .btn-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 229, 181, 0.3);
-    background: #00f5c5;
+    background: #00e5b5;
+    color: #1a1a1a;
+}
+
+.btn-cta:hover i {
+    transform: translateX(6px);
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     .beneficios-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .adicionales-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
@@ -435,18 +317,14 @@
         gap: 20px;
     }
     
-    .adicionales-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .comparison-table {
         padding: 20px;
     }
     
     .comparison-grid th,
     .comparison-grid td {
-        padding: 10px;
-        font-size: 0.85rem;
+        padding: 8px 10px;
+        font-size: 0.8rem;
     }
     
     .beneficios-cta {
@@ -454,42 +332,36 @@
     }
     
     .cta-content h4 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .btn-cta {
-        padding: 12px 25px;
-        font-size: 0.9rem;
+        padding: 10px 24px;
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 480px) {
     .comparison-grid th,
     .comparison-grid td {
-        padding: 8px;
-        font-size: 0.75rem;
-    }
-    
-    .adicional-item {
-        padding: 12px 15px;
-    }
-    
-    .adicional-item i {
-        font-size: 1.2rem;
-        min-width: 30px;
+        padding: 6px 8px;
+        font-size: 0.7rem;
     }
 }
 
 /* Animaciones al scroll */
-.beneficio-card,
-.adicional-item {
+.beneficio-card {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s ease;
 }
 
-.beneficio-card.revealed,
-.adicional-item.revealed {
+.beneficio-card.revealed {
     opacity: 1;
     transform: translateY(0);
 }
+
+.beneficio-card:nth-child(1) { transition-delay: 0.1s; }
+.beneficio-card:nth-child(2) { transition-delay: 0.2s; }
+.beneficio-card:nth-child(3) { transition-delay: 0.3s; }
+.beneficio-card:nth-child(4) { transition-delay: 0.4s; }

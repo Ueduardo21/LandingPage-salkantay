@@ -156,4 +156,4 @@ function logError($message, $context = []) {
 if (DEBUG && IS_LOCALHOST) {
     echo "<!-- Entorno: " . (IS_LOCALHOST ? 'LOCALHOST' : 'CPANEL') . " -->\n";
 }
-?>
+?>  

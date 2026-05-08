@@ -30,7 +30,6 @@ if (file_exists(__DIR__ . '/config.php')) {
     <link rel="stylesheet" href="assets/css/hero.css">
     <link rel="stylesheet" href="assets/css/prueba-social.css">
     <link rel="stylesheet" href="assets/css/tour.css">
-    <link rel="stylesheet" href="assets/css/galeria.css">
     <link rel="stylesheet" href="assets/css/beneficios.css">
     <link rel="stylesheet" href="assets/css/urgencias.css">
     <link rel="stylesheet" href="assets/css/faq.css">
@@ -45,236 +44,96 @@ if (file_exists(__DIR__ . '/config.php')) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    
-    <style>
-        /* Reset básico para evitar conflictos entre secciones */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            background: #ffffff;
-        }
-        
-        /* Variables globales para consistencia */
-        :root {
-            --primary-color: #00e5b5;
-            --primary-dark: #00c4a0;
-            --primary-light: #4db8ff;
-            --secondary-color: #00b4d8;
-            --white: #ffffff;
-            --dark-color: #1a1a1a;
-            --text-color: #2c3e50;
-            --text-light: #6c757d;
-            --gray-bg: #f8f9fa;
-        }
-        
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Estilos para botones globales (por si acaso) */
-        .btn-green {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.8rem;
-            background: linear-gradient(135deg, #00e5b5, #00c4a0);
-            border: none;
-            border-radius: 50px;
-            color: #1a1a1a;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .btn-green:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 229, 181, 0.3);
-        }
-        
-        .btn-outline-green {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.7rem;
-            background: transparent;
-            border: 2px solid #00e5b5;
-            border-radius: 50px;
-            color: #00e5b5;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .btn-outline-green:hover {
-            background: #00e5b5;
-            color: #1a1a1a;
-            transform: translateY(-2px);
-        }
-        
-        /* Utilidades */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .mt-2 {
-            margin-top: 0.5rem;
-        }
-        
-        .mt-3 {
-            margin-top: 1rem;
-        }
-        
-        .mb-2 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .mb-3 {
-            margin-bottom: 1rem;
-        }
-    </style>
+
 </head>
 <body>
- <!-- ============================================
+<!-- ============================================
      HEADER - NAVEGACIÓN SIMPLE
      ============================================ -->
 <header class="header">
-    <div class="header-container">
+    <div class="container">
         
-        <!-- Logo -->
-        <a href="#home" class="header-logo">
-            <i class="fas fa-mountain"></i>
-            <span>MachuPicchu<span class="logo-highlight">Tours</span></span>
+        <a href="#home" class="logo">
+            <span class="logo-icon">🏔️</span>
+            <span class="logo-text">Machu<span>Picchu</span></span>
         </a>
         
-        <!-- Menú Desktop -->
-        <nav class="header-nav">
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Inicio</a></li>
-                <li><a href="#tour" class="nav-link">El Tour</a></li>
-                <li><a href="#galeria" class="nav-link">Galería</a></li>
-                <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-            </ul>
-        </nav>
-        
-        <!-- Botón CTA en header -->
-        <button class="header-cta" onclick="openReservaModal()">
-            <i class="fas fa-calendar-check"></i> Reservar Ahora
+        <button class="menu-toggle" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
         
-        <!-- Botón hamburguesa (Mobile) -->
-        <button class="header-mobile-btn" id="mobileMenuBtn">
-            <i class="fas fa-bars"></i>
-        </button>
-        
-    </div>
-    
-    <!-- Menú Mobile (oculto por defecto) -->
-    <div class="header-mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <i class="fas fa-mountain"></i>
-            <span>Menú</span>
-            <button class="mobile-menu-close" id="closeMobileMenu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <ul class="mobile-nav-menu">
-            <li><a href="#home" class="mobile-nav-link">Inicio</a></li>
-            <li><a href="#tour" class="mobile-nav-link">El Tour</a></li>
-            <li><a href="#galeria" class="mobile-nav-link">Galería</a></li>
-            <li><a href="#beneficios" class="mobile-nav-link">Beneficios</a></li>
-            <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">Inicio</a></li>
+            <li><a href="#social-proof" class="nav-link">Confianza</a></li>
+            <li><a href="#tour" class="nav-link">Tour</a></li>
+            <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
-        <button class="mobile-cta" onclick="openReservaModal()">
-            <i class="fas fa-calendar-check"></i> Reservar Ahora
+        
+        <button class="header-btn" onclick="openReservaModal()">
+            <i class="fas fa-calendar-check"></i> Reservar
         </button>
+        
     </div>
 </header>
 
 <main>
-    <!-- Hero Section - Enfoque Conversión -->
+    <!-- Hero Section - Diseño Izquierda + Derecha -->
     <section id="home" class="hero">
-        <!-- Video de fondo -->
         <video autoplay muted loop playsinline class="hero-video" poster="assets/galeria/logo.png">
             <source src="assets/galeria/animacion_cusco.mp4" type="video/mp4">
-            Tu navegador no soporta videos HTML5.
         </video>
+        <div class="hero-overlay"></div>
         
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-grid">
                 
-                <!-- Título emocional + claro -->
-                <h1 class="hero-title">
-                    Descubre <span class="highlight">Machu Picchu</span><br>
-                    en 1 día sin complicaciones
-                </h1>
+                <!-- COLUMNA IZQUIERDA: Texto + CTA -->
+                <div class="hero-left">
+                    <h1 class="hero-title">
+                        Descubre <span class="highlight">Machu Picchu</span><br>
+                        en 1 día sin complicaciones
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Transporte ida y vuelta + guía bilingüe + entradas oficiales. 
+                        Sin filas, sin estrés, solo disfruta la experiencia.
+                    </p>
+                    
+                    <button class="btn-primary" onclick="openReservaModal()">
+                        📅 Reservar ahora → Cupos limitados
+                    </button>
+                </div>
                 
-                <!-- Subtítulo con beneficio concreto -->
-                <p class="hero-subtitle">
-                    Transporte + guía bilingüe + entradas incluidas. <br>
-                    Sin filas, sin estrés, solo disfruta.
-                </p>
-                
-                <!-- ⭐ DATOS RÁPIDOS - Lo más importante ⭐ -->
-                <div class="hero-quick-stats">
-                    <div class="quick-stat">
-                        <span class="stat-icon">⏱️</span>
-                        <div class="stat-info">
-                            <span class="stat-label">Duración</span>
-                            <strong class="stat-value">12 horas</strong>
+                <!-- COLUMNA DERECHA - Cuadros flotantes individuales -->
+                <div class="hero-right">
+                    
+                    <!-- Cuadro 1: FECHA -->
+                    <div class="floating-box">
+                        <div class="floating-content">
+                            <div class="floating-label">Próxima salida</div>
+                            <div class="floating-value">23 Octubre 2024</div>
                         </div>
                     </div>
                     
-                    <div class="quick-stat">
-                        <span class="stat-icon">💰</span>
-                        <div class="stat-info">
-                            <span class="stat-label">Precio desde</span>
-                            <strong class="stat-value">$89 USD</strong>
+                    <!-- Cuadro 2: CALIFICACIÓN -->
+                    <div class="floating-box">
+                        <div class="floating-content">
+                            <div class="floating-label">Calificación</div>
+                            <div class="floating-value">4.9/5 <span>(2,500+ reseñas)</span></div>
                         </div>
                     </div>
                     
-                    <div class="quick-stat">
-                        <span class="stat-icon">🥾</span>
-                        <div class="stat-info">
-                            <span class="stat-label">Nivel</span>
-                            <strong class="stat-value">Moderado</strong>
-                            <span class="stat-hint">(apto principiantes)</span>
+                    <!-- Cuadro 3: PRECIO -->
+                    <div class="floating-box">
+                        <div class="floating-content">
+                            <div class="floating-label">Precio por persona</div>
+                            <div class="floating-value">$89 USD <span>/ 1 día</span></div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Botón CTA principal (el más importante) -->
-                <div class="hero-buttons">
-                    <a href="javascript:void(0);" class="btn-primary" onclick="openReservaModal()">
-                        📅 Reservar ahora
-                        <span class="btn-small"> | Cupos limitados</span>
-                    </a>
-                    <a href="#tour" class="btn-secondary">
-                        Ver disponibilidad
-                    </a>
-                </div>
-                
-                <!-- Micro-texto de confianza (opcional pero efectivo) -->
-                <div class="hero-trust">
-                    <span>✨ 4.9/5 (2,500+ reseñas)</span>
-                    <span>🎫 Cancelación gratis 24h</span>
+                    
                 </div>
                 
             </div>
@@ -282,18 +141,18 @@ if (file_exists(__DIR__ . '/config.php')) {
     </section>
 
     <!-- ============================================
-        SECCIÓN: PRUEBA SOCIAL (CONFIANZA RÁPIDA)
+        SECCIÓN: PRUEBA SOCIAL (REDISEÑADA)
         ============================================ -->
     <section id="social-proof" class="social-proof">
         <div class="container">
             
-            <!-- Encabezado directo al punto -->
+            <!-- Encabezado -->
             <div class="proof-header">
-                <span class="proof-badge">✨ Confianza que respalda</span>
+                <span class="proof-badge">✨ Confianza verificada</span>
                 <h2>Únete a <span class="highlight">2,500+ viajeros</span> que ya vivieron esta experiencia</h2>
             </div>
             
-            <!-- ⭐ CALIFICACIÓN GENERAL ⭐ -->
+            <!-- Calificación general -->
             <div class="rating-card">
                 <div class="rating-stars">
                     <div class="stars">
@@ -304,8 +163,9 @@ if (file_exists(__DIR__ . '/config.php')) {
                         <i class="fas fa-star"></i>
                     </div>
                     <span class="rating-number">4.9</span>
-                    <span class="rating-total">/ 5</span>
+                    <span class="rating-total">/5</span>
                 </div>
+                <div class="rating-divider"></div>
                 <div class="rating-details">
                     <div class="rating-platform">
                         <i class="fas fa-trophy"></i>
@@ -322,101 +182,7 @@ if (file_exists(__DIR__ . '/config.php')) {
                 </div>
             </div>
             
-            <!-- 📸 RESEÑAS DESTACADAS -->
-            <div class="reviews-grid">
-                
-                <!-- Review 1 -->
-                <div class="review-card">
-                    <div class="review-user">
-                        <div class="user-avatar user-avatar-1">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <div class="user-info">
-                            <h4>María González</h4>
-                            <div class="review-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="review-platform verified">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <p class="review-text">
-                        "Increíble experiencia! Todo perfectamente organizado. El guía sabía muchísimo de la historia inca. 
-                        ¡Machu Picchu es impresionante!"
-                    </p>
-                    <div class="review-footer">
-                        <span class="review-date"><i class="far fa-calendar-alt"></i> Hace 3 días</span>
-                        <span class="review-location"><i class="fas fa-map-marker-alt"></i> Machu Picchu</span>
-                    </div>
-                </div>
-                
-                <!-- Review 2 -->
-                <div class="review-card">
-                    <div class="review-user">
-                        <div class="user-avatar user-avatar-2">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <div class="user-info">
-                            <h4>Carlos Rodríguez</h4>
-                            <div class="review-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="review-platform verified">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <p class="review-text">
-                        "Super recomendado! El transporte cómodo, puntuales en todo. La comida del almuerzo espectacular. 
-                        Volvería sin dudarlo."
-                    </p>
-                    <div class="review-footer">
-                        <span class="review-date"><i class="far fa-calendar-alt"></i> Hace 1 semana</span>
-                        <span class="review-location"><i class="fas fa-map-marker-alt"></i> Valle Sagrado</span>
-                    </div>
-                </div>
-                
-                <!-- Review 3 -->
-                <div class="review-card">
-                    <div class="review-user">
-                        <div class="user-avatar user-avatar-3">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <div class="user-info">
-                            <h4>Laura Fernández</h4>
-                            <div class="review-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="review-platform verified">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <p class="review-text">
-                        "Excelente servicio desde la reserva hasta el final. El guía hablaba perfecto inglés y español. 
-                        ¡Una experiencia mágica!"
-                    </p>
-                    <div class="review-footer">
-                        <span class="review-date"><i class="far fa-calendar-alt"></i> Hace 5 días</span>
-                        <span class="review-location"><i class="fas fa-map-marker-alt"></i> Machu Picchu</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 📊 ESTADÍSTICAS RÁPIDAS (Para agencia de viajes) -->
+            <!-- Estadísticas -->
             <div class="trust-stats">
                 <div class="trust-stat">
                     <div class="stat-icon"><i class="fas fa-clock"></i></div>
@@ -440,7 +206,7 @@ if (file_exists(__DIR__ . '/config.php')) {
                 </div>
             </div>
             
-            <!-- 🏆 CERTIFICACIONES para Agencia de Viajes -->
+            <!-- Certificaciones -->
             <div class="certifications">
                 <div class="cert-item">
                     <i class="fas fa-shield-alt"></i>
@@ -486,7 +252,7 @@ if (file_exists(__DIR__ . '/config.php')) {
                 </div>
             </div>
             
-            <!-- Call to Action sutil -->
+            <!-- Call to Action -->
             <div class="proof-cta">
                 <p><i class="fas fa-star"></i> <strong>2,500+ viajeros</strong> ya confían en nosotros</p>
                 <a href="#tour" class="btn-outline">Ver disponibilidad <i class="fas fa-arrow-right"></i></a>
@@ -780,294 +546,6 @@ if (file_exists(__DIR__ . '/config.php')) {
     </section>
 
     <!-- ============================================
-        SECCIÓN: GALERÍA (EXPERIENCIA REAL)
-        ============================================ -->
-    <section id="galeria" class="galeria-section">
-        <div class="container">
-            
-            <!-- Encabezado -->
-            <div class="section-header">
-                <span class="section-subtitle">MOMENTOS REALES</span>
-                <h2>Vive la <span class="highlight">experiencia</span> a través de nuestros viajeros</h2>
-                <p>Imágenes y videos reales de viajeros como tú. Esto es lo que te espera.</p>
-            </div>
-
-            <!-- Filtros de categoría -->
-            <div class="galeria-filters">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="aventura">🏔️ Aventura</button>
-                <button class="filter-btn" data-filter="cultura">🏛️ Cultura</button>
-                <button class="filter-btn" data-filter="gastronomia">🍜 Gastronomía</button>
-                <button class="filter-btn" data-filter="atardecer">🌅 Atardeceres</button>
-            </div>
-
-            <!-- Grid de Galería -->
-            <div class="galeria-grid">
-                
-                <!-- Item 1 - Foto Aventura -->
-                <div class="galeria-item" data-category="aventura">
-                    <div class="galeria-card">
-                        <div class="galeria-image">
-                            <img src="assets/galeria/aventura-trekking.jpg" alt="Viajeros en el Salkantay Trek">
-                            <div class="galeria-overlay">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                        <div class="galeria-info">
-                            <div class="user-info">
-                                <img src="assets/avatars/user1.jpg" alt="Usuario" class="user-avatar">
-                                <div>
-                                    <h4>María y Carlos</h4>
-                                    <span>Viajeros de España</span>
-                                </div>
-                            </div>
-                            <p class="galeria-caption">"La mejor experiencia de nuestras vidas. El Salkantay es simplemente mágico."</p>
-                            <div class="galeria-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Salkantay Trek</span>
-                                <span><i class="fas fa-heart"></i> 234</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2 - Video Experiencia -->
-                <div class="galeria-item video" data-category="aventura">
-                    <div class="galeria-card">
-                        <div class="galeria-image">
-                            <video class="galeria-video" poster="assets/galeria/video-poster.jpg" preload="metadata">
-                                <source src="assets/galeria/experiencia-machupicchu.mp4" type="video/mp4">
-                            </video>
-                            <div class="video-play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <div class="galeria-overlay">
-                                <i class="fas fa-play-circle"></i>
-                            </div>
-                        </div>
-                        <div class="galeria-info">
-                            <div class="user-info">
-                                <img src="assets/avatars/user2.jpg" alt="Usuario" class="user-avatar">
-                                <div>
-                                    <h4>Laura Fernández</h4>
-                                    <span>Travel Blogger</span>
-                                </div>
-                            </div>
-                            <p class="galeria-caption">"Llegar a Machu Picchu al amanecer es indescriptible 🇵🇪✨"</p>
-                            <div class="galeria-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Machu Picchu</span>
-                                <span><i class="fas fa-play-circle"></i> Video</span>
-                                <span><i class="fas fa-heart"></i> 567</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 - Foto Cultura -->
-                <div class="galeria-item" data-category="cultura">
-                    <div class="galeria-card">
-                        <div class="galeria-image">
-                            <img src="assets/galeria/cultura-inca.jpg" alt="Guía explicando historia Inca">
-                            <div class="galeria-overlay">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                        <div class="galeria-info">
-                            <div class="user-info">
-                                <img src="assets/avatars/user3.jpg" alt="Usuario" class="user-avatar">
-                                <div>
-                                    <h4>Familia Rodríguez</h4>
-                                    <span>De México</span>
-                                </div>
-                            </div>
-                            <p class="galeria-caption">"Nuestro guía Juan nos enseñó cada rincón con tanta pasión. Increíble!"</p>
-                            <div class="galeria-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Valle Sagrado</span>
-                                <span><i class="fas fa-heart"></i> 189</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4 - Foto Atardecer -->
-                <div class="galeria-item" data-category="atardecer">
-                    <div class="galeria-card">
-                        <div class="galeria-image">
-                            <img src="assets/galeria/atardecer-montana.jpg" alt="Atardecer en las montañas">
-                            <div class="galeria-overlay">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                        <div class="galeria-info">
-                            <div class="user-info">
-                                <img src="assets/avatars/user4.jpg" alt="Usuario" class="user-avatar">
-                                <div>
-                                    <h4>Ana Sofía</h4>
-                                    <span>Colombia</span>
-                                </div>
-                            </div>
-                            <p class="galeria-caption">"El atardecer desde el campamento... un sueño hecho realidad."</p>
-                            <div class="galeria-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Soraypampa</span>
-                                <span><i class="fas fa-heart"></i> 342</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 5 - Video Grupal -->
-                <div class="galeria-item video" data-category="aventura">
-                    <div class="galeria-card">
-                        <div class="galeria-image">
-                            <video class="galeria-video" poster="assets/galeria/grupo-poster.jpg" preload="metadata">
-                                <source src="assets/galeria/grupo-feliz.mp4" type="video/mp4">
-                            </video>
-                            <div class="video-play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <div class="galeria-overlay">
-                                <i class="fas fa-play-circle"></i>
-                            </div>
-                        </div>
-                        <div class="galeria-info">
-                            <div class="user-info">
-                                <div class="group-avatars">
-                                    <img src="assets/avatars/user5.jpg" alt="">
-                                    <img src="assets/avatars/user6.jpg" alt="">
-                                    <img src="assets/avatars/user7.jpg" alt="">
-                                    <span>+8</span>
-                                </div>
-                                <div>
-                                    <h4>Grupo de Amigos</h4>
-                                    <span>Argentina 🇦🇷</span>
-                                </div>
-                            </div>
-                            <p class="galeria-caption">"La mejor decisión fue hacer este tour juntos. Volveremos!"</p>
-                            <div class="galeria-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Machu Picchu</span>
-                                <span><i class="fas fa-play-circle"></i> Video</span>
-                                <span><i class="fas fa-heart"></i> 892</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 6 - Foto Gastronomía -->
-                <div class="galeria-item" data-category="gastronomia">
-                    <div class="galeria-card">
-                        <div class="galeria-image">
-                            <img src="assets/galeria/comida-local.jpg" alt="Comida peruana en el tour">
-                            <div class="galeria-overlay">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                        <div class="galeria-info">
-                            <div class="user-info">
-                                <img src="assets/avatars/user8.jpg" alt="Usuario" class="user-avatar">
-                                <div>
-                                    <h4>Chef viajero</h4>
-                                    <span>Perú</span>
-                                </div>
-                            </div>
-                            <p class="galeria-caption">"El almuerzo en el restaurante local: ¡Cuy, Lomo Saltado y más!"</p>
-                            <div class="galeria-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Aguas Calientes</span>
-                                <span><i class="fas fa-heart"></i> 421</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 7 - Foto Aventura -->
-                <div class="galeria-item" data-category="aventura">
-                    <div class="galeria-card">
-                        <div class="galeria-image">
-                            <img src="assets/galeria/caminata-grupo.jpg" alt="Grupo caminando">
-                            <div class="galeria-overlay">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                        <div class="galeria-info">
-                            <div class="user-info">
-                                <img src="assets/avatars/user9.jpg" alt="Usuario" class="user-avatar">
-                                <div>
-                                    <h4>Pedro y equipo</h4>
-                                    <span>Chile</span>
-                                </div>
-                            </div>
-                            <p class="galeria-caption">"Subiendo al punto más alto a 4,600m. El esfuerzo vale la pena!"</p>
-                            <div class="galeria-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Paso Salkantay</span>
-                                <span><i class="fas fa-heart"></i> 567</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 8 - Foto Cultura -->
-                <div class="galeria-item" data-category="cultura">
-                    <div class="galeria-card">
-                        <div class="galeria-image">
-                            <img src="assets/galeria/mercado-local.jpg" alt="Mercado local">
-                            <div class="galeria-overlay">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                        <div class="galeria-info">
-                            <div class="user-info">
-                                <img src="assets/avatars/user10.jpg" alt="Usuario" class="user-avatar">
-                                <div>
-                                    <h4>Sarah</h4>
-                                    <span>Inglaterra</span>
-                                </div>
-                            </div>
-                            <p class="galeria-caption">"Conociendo el mercado local de Chinchero. La cultura viva del Perú."</p>
-                            <div class="galeria-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Chinchero</span>
-                                <span><i class="fas fa-heart"></i> 234</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Invitación a compartir -->
-            <div class="share-invite">
-                <div class="share-content">
-                    <i class="fas fa-camera-retro"></i>
-                    <h4>¿Ya viviste esta experiencia?</h4>
-                    <p>Comparte tus fotos y videos con nosotros usando <strong>#MiAventuraPerú</strong></p>
-                    <div class="share-social">
-                        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-                        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
-                        <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Lightbox para ver imágenes grandes -->
-        <div id="lightbox" class="lightbox">
-            <span class="lightbox-close">&times;</span>
-            <img class="lightbox-image" src="">
-            <div class="lightbox-caption"></div>
-            <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
-        </div>
-
-        <!-- Modal de Video -->
-        <div id="videoModal" class="video-modal">
-            <div class="video-modal-content">
-                <span class="video-modal-close">&times;</span>
-                <video id="modalVideo" controls>
-                    <source src="" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
         SECCIÓN: BENEFICIOS CLAVE (¿POR QUÉ ELEGIRNOS?)
         ============================================ -->
     <section id="beneficios" class="beneficios-section">
@@ -1135,62 +613,6 @@ if (file_exists(__DIR__ . '/config.php')) {
                     </div>
                 </div>
 
-            </div>
-
-            <!-- Beneficios Adicionales (Grid 2) -->
-            <div class="beneficios-adicionales">
-                <div class="section-subtitle-center">Y también...</div>
-                <div class="adicionales-grid">
-                    
-                    <div class="adicional-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <strong>Seguro incluido</strong>
-                            <span>Asistencia médica básica durante el tour</span>
-                        </div>
-                    </div>
-                    
-                    <div class="adicional-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <strong>Puntualidad garantizada</strong>
-                            <span>Llegamos siempre a tiempo, respetamos tu itinerario</span>
-                        </div>
-                    </div>
-                    
-                    <div class="adicional-item">
-                        <i class="fas fa-ticket-alt"></i>
-                        <div>
-                            <strong>Entradas aseguradas</strong>
-                            <span>Nos encargamos de toda la gestión de boletos</span>
-                        </div>
-                    </div>
-                    
-                    <div class="adicional-item">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        <div>
-                            <strong>Turismo responsable</strong>
-                            <span>Operamos con respeto a las comunidades locales</span>
-                        </div>
-                    </div>
-                    
-                    <div class="adicional-item">
-                        <i class="fas fa-wifi"></i>
-                        <div>
-                            <strong>Comunicación constante</strong>
-                            <span>Asistencia vía WhatsApp durante todo el viaje</span>
-                        </div>
-                    </div>
-                    
-                    <div class="adicional-item">
-                        <i class="fas fa-gem"></i>
-                        <div>
-                            <strong>Experiencias auténticas</strong>
-                            <span>Tour diseñado por locales que aman su tierra</span>
-                        </div>
-                    </div>
-                    
-                </div>
             </div>
 
             <!-- Comparación vs Competencia -->
@@ -1699,71 +1121,39 @@ if (file_exists(__DIR__ . '/config.php')) {
     </div>
         
     <!-- ============================================
-        FOOTER SIMPLE
-        ============================================ -->
+     FOOTER SIMPLE
+     ============================================ -->
     <footer class="footer">
-        <div class="footer-container">
-            
-            <!-- Fila principal -->
-            <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid" style="grid-template-columns: repeat(2, 1fr);">
                 
-                <!-- Logo y descripción -->
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <i class="fas fa-mountain"></i>
-                        <span><?php echo APP_NAME; ?></span>
+                <div class="footer-col">
+                    <a href="#home" class="footer-logo">
+                        <span class="footer-logo-icon">🏔️</span>
+                        <span class="footer-logo-text">Machu<span>Picchu</span></span>
+                    </a>
+                    <p class="footer-desc">Descubre la magia de Machu Picchu con los mejores guías locales.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
-                    <p class="footer-description">
-                        Experiencias únicas en Machu Picchu con los mejores estándares de calidad.
-                    </p>
                 </div>
                 
-                <!-- Enlaces rápidos -->
-                <div class="footer-links">
-                    <h4>Explorar</h4>
-                    <ul>
-                        <li><a href="#home">Inicio</a></li>
-                        <li><a href="#tour">El Tour</a></li>
-                        <li><a href="#galeria">Galería</a></li>
-                        <li><a href="#faq">Preguntas</a></li>
+                <div class="footer-col">
+                    <h4 class="footer-title">CONTACTO</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i> +51 984 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@machupicchu.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Cusco, Perú</li>
                     </ul>
-                </div>
-                
-                <!-- Contacto -->
-                <div class="footer-contact">
-                    <h4>Contacto</h4>
-                    <ul>
-                        <li><i class="fab fa-whatsapp"></i> +51 999 888 777</li>
-                        <li><i class="far fa-envelope"></i> info@michicchutours.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Cusco - Perú</li>
-                    </ul>
-                </div>
-                
-                <!-- Redes Sociales -->
-                <div class="footer-social">
-                    <h4>Síguenos</h4>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
                 </div>
                 
             </div>
             
-            <!-- Fila inferior -->
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> <?php echo APP_NAME; ?>. Todos los derechos reservados.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Términos y condiciones</a>
-                    <span class="separator">|</span>
-                    <a href="#">Política de privacidad</a>
-                    <span class="separator">|</span>
-                    <a href="#">Libro de reclamaciones</a>
-                </div>
+                <p>© <span id="currentYear"></span> Machu Picchu Tours</p>
             </div>
-            
         </div>
     </footer>
 
@@ -2144,7 +1534,6 @@ if (file_exists(__DIR__ . '/config.php')) {
     <script src="assets/js/hero.js"></script>
     <script src="assets/js/prueba-social.js"></script>
     <script src="assets/js/tour.js"></script>
-    <script src="assets/js/galeria.js"></script>
     <script src="assets/js/beneficios.js"></script>
     <script src="assets/js/urgencias.js"></script>
     <script src="assets/js/components/modal.js"></script>

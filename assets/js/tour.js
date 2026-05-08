@@ -1,28 +1,8 @@
 // ============================================
-// SIDEBAR TOUR - JAVASCRIPT (VERSIÓN SIMPLIFICADA)
+// SIDEBAR TOUR - CON STICKY
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // ============================================
-    // ANIMACIONES DEL SIDEBAR AL SCROLL
-    // ============================================
-    
-    const sidebar = document.querySelector('.tour-sidebar');
-    const sidebarCard = document.querySelector('.sidebar-card');
-    
-    if (sidebar && sidebarCard) {
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY;
-            const sidebarTop = sidebar.offsetTop;
-            
-            if (scrollPosition > sidebarTop - 20) {
-                sidebarCard.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
-            } else {
-                sidebarCard.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-            }
-        });
-    }
     
     // ============================================
     // REVELACIÓN DE ELEMENTOS AL SCROLL
@@ -43,6 +23,22 @@ document.addEventListener('DOMContentLoaded', function() {
         revealElements.forEach(el => {
             el.classList.add('reveal-hidden');
             revealObserver.observe(el);
+        });
+    }
+    
+    // ============================================
+    // SOMBRA DINÁMICA AL HACER SCROLL
+    // ============================================
+    
+    const sidebarCard = document.querySelector('.sidebar-card');
+    
+    if (sidebarCard) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                sidebarCard.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+            } else {
+                sidebarCard.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+            }
         });
     }
     
