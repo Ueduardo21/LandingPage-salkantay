@@ -1,4 +1,30 @@
 /* ============================================
+<<<<<<< HEAD
+   TOUR SECTION CON SIDEBAR - STICKY FUNCIONAL
+   ============================================ */
+
+/* IMPORTANTE: Reset para que el sticky funcione */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    scroll-behavior: smooth;
+}
+
+.tour-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+    position: relative;
+    overflow: visible !important;
+}
+
+.tour-section .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow: visible !important;
+=======
    TOUR SECTION CON SIDEBAR
    ============================================ */
 
@@ -11,6 +37,7 @@
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* Encabezado */
@@ -49,14 +76,26 @@
 
 /* WRAPPER - Grid de 2 columnas */
 .tour-wrapper {
+<<<<<<< HEAD
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    position: relative;
+    overflow: visible !important;
+=======
     display: grid;
     grid-template-columns: 1fr 380px;
     gap: 40px;
     align-items: start;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* COLUMNA IZQUIERDA - Contenido principal */
 .tour-main {
+<<<<<<< HEAD
+    flex: 1;
+=======
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -257,12 +296,24 @@
 }
 
 /* ============================================
+<<<<<<< HEAD
+   SIDEBAR - STICKY CORREGIDO (USANDO FLEX EN LUGAR DE GRID)
+   ============================================ */
+
+.tour-sidebar {
+    width: 380px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 30px;
+    align-self: flex-start;
+=======
    SIDEBAR - COLUMNA DERECHA (STICKY)
    ============================================ */
 
 .tour-sidebar {
     position: sticky;
     top: 100px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .sidebar-card {
@@ -270,6 +321,15 @@
     border-radius: 20px;
     padding: 25px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
+    transition: all 0.3s ease;
+}
+
+.sidebar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+=======
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* Precio */
@@ -362,6 +422,8 @@
     margin: 20px 0;
 }
 
+<<<<<<< HEAD
+=======
 /* Selector de fecha */
 .sidebar-dates,
 .sidebar-people {
@@ -459,6 +521,7 @@
     color: #00e5b5;
 }
 
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 /* Botones */
 .sidebar-buttons {
     display: flex;
@@ -559,20 +622,36 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+<<<<<<< HEAD
+    .tour-sidebar {
+        width: 340px;
+=======
     .tour-wrapper {
         grid-template-columns: 1fr 340px;
         gap: 30px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }
 
 @media (max-width: 768px) {
     .tour-wrapper {
+<<<<<<< HEAD
+        flex-direction: column;
+    }
+    
+    .tour-sidebar {
+        width: 100%;
+        position: static;
+        order: -1;
+        margin-bottom: 30px;
+=======
         grid-template-columns: 1fr;
     }
     
     .tour-sidebar {
         position: static;
         order: -1;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .section-header h2 {

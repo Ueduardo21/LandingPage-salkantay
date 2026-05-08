@@ -1,11 +1,70 @@
 /* ============================================
+<<<<<<< HEAD
+   HEADER - NAVEGACIÓN ELEGANTE (MEJORADO)
+   ============================================ */
+=======
      HEADER SIMPLE Y OPTIMIZADO
      ============================================ */
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 
 .header {
     position: fixed;
     top: 0;
     left: 0;
+<<<<<<< HEAD
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.4s ease;
+    padding: 1.2rem 0;
+}
+
+.header.scrolled {
+    background: #1a1a1a;
+    backdrop-filter: blur(12px);
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 229, 181, 0.15);
+}
+
+.header .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ============================================
+   LOGO - MÁS GRANDE
+   ============================================ */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    z-index: 1002;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-icon {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+=======
     right: 0;
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
@@ -55,10 +114,19 @@
 }
 
 .logo-highlight {
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #00e5b5;
 }
 
 /* ============================================
+<<<<<<< HEAD
+   NAVEGACIÓN - TEXTO MÁS GRANDE
+   ============================================ */
+.nav-menu {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+=======
      MENÚ DESKTOP
      ============================================ */
 .header-nav {
@@ -71,25 +139,42 @@
     display: flex;
     list-style: none;
     gap: 2rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     margin: 0;
     padding: 0;
 }
 
 .nav-link {
+<<<<<<< HEAD
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+=======
     text-decoration: none;
     color: #e0e0e0;
     font-weight: 500;
     font-size: 0.95rem;
     transition: all 0.3s ease;
     position: relative;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
+<<<<<<< HEAD
+    bottom: 0;
+    left: 0;
+    width: 0%;
+=======
     bottom: -5px;
     left: 0;
     width: 0;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     height: 2px;
     background: #00e5b5;
     transition: width 0.3s ease;
@@ -100,12 +185,291 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
+.nav-link:hover {
+=======
 .nav-link:hover,
 .nav-link.active {
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #00e5b5;
 }
 
 /* ============================================
+<<<<<<< HEAD
+   BOTÓN DE RESERVA - ÁMBAR (MÁS GRANDE)
+   ============================================ */
+.header-btn {
+    background: transparent;
+    color: #FFB347;
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #FFB347;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    z-index: 1002;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.header-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FFB347, #FF9F2E);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.header-btn:hover::before {
+    left: 0;
+}
+
+.header-btn i {
+    transition: transform 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.header-btn:hover {
+    color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 179, 71, 0.5);
+}
+
+.header-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* ============================================
+   MENÚ HAMBURGUESA
+   ============================================ */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1002;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ============================================
+   RESPONSIVE - MEJORADO
+   ============================================ */
+
+/* Tablet (landscape) */
+@media (max-width: 992px) {
+    .header .container {
+        padding: 0 1.5rem;
+    }
+    
+    .nav-menu {
+        gap: 1.8rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+    
+    .header-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.7rem;
+    }
+}
+
+/* Tablet (portrait) - Muestra menú hamburguesa */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem 0;
+    }
+    
+    .header.scrolled {
+        padding: 0.6rem 0;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 1001;
+        border-left: 1px solid rgba(0, 229, 181, 0.2);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+    
+    .header-btn {
+        display: none;
+    }
+    
+    .nav-menu::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu.active::before {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Botón reserva dentro del menú móvil */
+    .mobile-reservar-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #00e5b5;
+        color: #1a1a1a;
+        padding: 0.7rem 1.5rem;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        margin-top: 1rem;
+    }
+}
+
+/* Móvil grande */
+@media (max-width: 576px) {
+    .header .container {
+        padding: 0 1.2rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .menu-toggle span {
+        width: 22px;
+        height: 2px;
+    }
+    
+    .nav-menu {
+        width: 85%;
+        max-width: 280px;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+    }
+}
+
+/* Móvil pequeño */
+@media (max-width: 375px) {
+    .header {
+        padding: 0.8rem 0;
+    }
+    
+    .header.scrolled {
+        padding: 0.5rem 0;
+    }
+    
+    .logo-icon {
+        font-size: 1.3rem;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+    }
+    
+    .menu-toggle span {
+        width: 20px;
+        height: 2px;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        max-width: 260px;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes para pantallas muy altas */
+@media (min-height: 800px) and (max-width: 768px) {
+    .nav-menu {
+        justify-content: flex-start;
+        padding-top: 5rem;
+    }
+    
+    .nav-link {
+        padding: 0.8rem;
+    }
+}
+
+/* Prevenir scroll cuando el menú está abierto */
+body.menu-open {
+    overflow: hidden;
+=======
      BOTÓN CTA
      ============================================ */
 .header-cta {
@@ -280,4 +644,5 @@
     .header-logo span {
         font-size: 0.9rem;
     }
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }

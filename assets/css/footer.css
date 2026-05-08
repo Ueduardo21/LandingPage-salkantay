@@ -1,4 +1,16 @@
 /* ============================================
+<<<<<<< HEAD
+   FOOTER - 2 COLUMNAS | COLOR ELEGANTE
+   ============================================ */
+
+.footer {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    padding: 3rem 0 1.5rem;
+    border-top: 1px solid rgba(0, 229, 181, 0.15);
+}
+
+.footer .container {
+=======
      FOOTER SIMPLE
      ============================================ */
 
@@ -10,11 +22,43 @@
 }
 
 .footer-container {
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+<<<<<<< HEAD
+/* Grid de 2 columnas */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   COLUMNA IZQUIERDA - Logo y Redes
+   ============================================ */
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.footer-logo-icon {
+    font-size: 1.8rem;
+}
+
+.footer-logo-text {
+    font-size: 1.3rem;
+=======
 /* ============================================
      FILA PRINCIPAL
      ============================================ */
@@ -40,10 +84,31 @@
 
 .footer-logo span {
     font-size: 1.2rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     font-weight: 700;
     color: #ffffff;
 }
 
+<<<<<<< HEAD
+.footer-logo-text span {
+    color: #00e5b5;
+}
+
+.footer-desc {
+    color: #aaaaaa;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Redes Sociales */
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+=======
 .footer-description {
     color: #b0b0b0;
     font-size: 0.85rem;
@@ -122,12 +187,25 @@
 }
 
 .social-icons a {
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     display: flex;
     align-items: center;
     justify-content: center;
     width: 36px;
     height: 36px;
     background: rgba(255, 255, 255, 0.08);
+<<<<<<< HEAD
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:hover {
+    background: #00e5b5;
+    color: #1a1a1a;
+    border-color: #00e5b5;
+=======
     border-radius: 50%;
     color: #ffffff;
     transition: all 0.3s ease;
@@ -137,29 +215,120 @@
 .social-icons a:hover {
     background: #00e5b5;
     color: #0f0f0f;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     transform: translateY(-3px);
 }
 
 /* ============================================
+<<<<<<< HEAD
+   COLUMNA DERECHA - Información de Contacto
+   ============================================ */
+.footer-info {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+}
+
+/* Sección de contacto */
+.footer-section {
+    min-width: 160px;
+}
+
+.footer-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    color: #aaaaaa;
+}
+
+.footer-contact i {
+    color: #00e5b5;
+    width: 20px;
+    font-size: 0.85rem;
+}
+
+/* Enlaces rápidos */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #00e5b5;
+    transform: translateX(3px);
+}
+
+/* ============================================
+   FOOTER BOTTOM
+   ============================================ */
+.footer-bottom {
+=======
      FILA INFERIOR
      ============================================ */
 .footer-bottom {
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+<<<<<<< HEAD
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.7rem;
+    color: #777777;
+=======
 }
 
 .footer-bottom p {
     color: #888;
     font-size: 0.75rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .footer-bottom-links {
     display: flex;
+<<<<<<< HEAD
+    gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+    color: #777777;
+    text-decoration: none;
+    transition: color 0.2s ease;
+=======
     align-items: center;
     gap: 0.8rem;
     flex-wrap: wrap;
@@ -170,12 +339,39 @@
     text-decoration: none;
     font-size: 0.75rem;
     transition: color 0.3s ease;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .footer-bottom-links a:hover {
     color: #00e5b5;
 }
 
+<<<<<<< HEAD
+/* ============================================
+   RESPONSIVE - MEJORADO
+   ============================================ */
+
+/* Tablet (landscape) */
+@media (max-width: 992px) {
+    .footer {
+        padding: 2.5rem 0 1.2rem;
+    }
+    
+    .footer-grid {
+        gap: 2rem;
+    }
+    
+    .footer-info {
+        gap: 2rem;
+    }
+    
+    .footer-section {
+        min-width: 140px;
+    }
+}
+
+/* Tablet (portrait) */
+=======
 .separator {
     color: #444;
     font-size: 0.7rem;
@@ -191,21 +387,50 @@
     }
 }
 
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 @media (max-width: 768px) {
     .footer {
         padding: 2rem 0 1rem;
     }
     
+<<<<<<< HEAD
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-brand {
+        text-align: center;
+        max-width: 100%;
+        margin: 0 auto;
+=======
     .footer-main {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         text-align: center;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .footer-logo {
         justify-content: center;
     }
     
+<<<<<<< HEAD
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-info {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-section {
+        text-align: center;
+        min-width: 180px;
+=======
     .footer-description {
         max-width: 100%;
         text-align: center;
@@ -221,23 +446,203 @@
     .footer-links ul,
     .footer-contact ul {
         text-align: center;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .footer-contact li {
         justify-content: center;
     }
     
+<<<<<<< HEAD
+    .footer-links li {
+        text-align: center;
+    }
+    
+    .footer-links a:hover {
+        transform: translateX(0) translateY(-2px);
+=======
     .social-icons {
         justify-content: center;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+<<<<<<< HEAD
+        gap: 0.8rem;
+=======
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .footer-bottom-links {
         justify-content: center;
+<<<<<<< HEAD
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+
+/* Móvil grande */
+@media (max-width: 576px) {
+    .footer {
+        padding: 1.8rem 0 1rem;
+    }
+    
+    .footer .container {
+        padding: 0 16px;
+    }
+    
+    .footer-grid {
+        gap: 1.5rem;
+    }
+    
+    .footer-logo-icon {
+        font-size: 1.5rem;
+    }
+    
+    .footer-logo-text {
+        font-size: 1.1rem;
+    }
+    
+    .footer-desc {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .social-links a {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .footer-info {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .footer-section {
+        min-width: auto;
+    }
+    
+    .footer-title {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+    }
+    
+    .footer-contact li {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+    }
+    
+    .footer-contact i {
+        width: 18px;
+        font-size: 0.75rem;
+    }
+    
+    .footer-links a {
+        font-size: 0.75rem;
+    }
+    
+    .footer-bottom {
+        padding-top: 1rem;
+        font-size: 0.65rem;
+    }
+    
+    .footer-bottom-links {
+        gap: 0.8rem;
+    }
+}
+
+/* Móvil pequeño */
+@media (max-width: 375px) {
+    .footer {
+        padding: 1.5rem 0 0.8rem;
+    }
+    
+    .footer-logo-icon {
+        font-size: 1.3rem;
+    }
+    
+    .footer-logo-text {
+        font-size: 1rem;
+    }
+    
+    .footer-desc {
+        font-size: 0.75rem;
+    }
+    
+    .social-links {
+        gap: 8px;
+    }
+    
+    .social-links a {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .footer-title {
+        font-size: 0.75rem;
+    }
+    
+    .footer-contact li {
+        font-size: 0.7rem;
+        margin-bottom: 8px;
+    }
+    
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+    
+    .footer-links a {
+        font-size: 0.7rem;
+    }
+    
+    .footer-bottom {
+        font-size: 0.6rem;
+    }
+    
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Ajustes para pantallas muy anchas */
+@media (min-width: 1400px) {
+    .footer .container {
+        max-width: 1300px;
+    }
+    
+    .footer-grid {
+        gap: 4rem;
+    }
+    
+    .footer-brand {
+        max-width: 400px;
+    }
+    
+    .footer-info {
+        gap: 4rem;
+    }
+}
+
+/* Ajustes para pantallas con altura pequeña */
+@media (max-height: 600px) and (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 0 0.8rem;
+    }
+    
+    .footer-grid {
+        gap: 1rem;
+    }
+    
+    .footer-desc {
+        margin-bottom: 10px;
+    }
+    
+    .social-links {
+        margin-bottom: 5px;
+=======
     }
 }
 
@@ -249,5 +654,6 @@
     
     .separator {
         display: none;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }

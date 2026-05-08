@@ -1,4 +1,15 @@
 /* ============================================
+<<<<<<< HEAD
+   SECCIÓN: URGENCIA / ESCASEZ - COLORES TOUR
+   ============================================ */
+
+.urgencia-section {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.urgencia-section .container {
+=======
      SECCIÓN URGENCIA / ESCASEZ
      ============================================ */
 
@@ -9,11 +20,22 @@
 }
 
 .container {
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+<<<<<<< HEAD
+/* ============================================
+   BANNER PRINCIPAL
+   ============================================ */
+.urgencia-banner {
+    background: #f8f9fa;
+    border-left: 4px solid #00e5b5;
+    padding: 30px 35px;
+    margin-bottom: 50px;
+=======
 /* Banner Principal */
 .urgencia-banner {
     background: linear-gradient(135deg, #ff4757, #ff6b81);
@@ -50,12 +72,23 @@
     to {
         transform: translateX(60px);
     }
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .urgencia-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+<<<<<<< HEAD
+    background: rgba(0, 229, 181, 0.1);
+    color: #00e5b5;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+=======
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     padding: 6px 16px;
@@ -63,6 +96,7 @@
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 20px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .urgencia-content {
@@ -71,6 +105,42 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
+<<<<<<< HEAD
+}
+
+.urgencia-texto {
+    flex: 1;
+}
+
+.urgencia-texto h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.urgencia-texto .highlight {
+    color: #00e5b5;
+    background: none;
+}
+
+.urgencia-texto p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Contador Regresivo */
+.countdown-container {
+    text-align: center;
+}
+
+.countdown-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 10px;
+=======
     position: relative;
     z-index: 2;
 }
@@ -110,18 +180,53 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .countdown {
     display: flex;
+<<<<<<< HEAD
+    gap: 8px;
+=======
     align-items: center;
     justify-content: center;
     gap: 10px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .countdown-block {
     text-align: center;
     min-width: 60px;
+<<<<<<< HEAD
+    background: #f8f9fa;
+    padding: 8px 0;
+    border: 1px solid #f0f0f0;
+}
+
+.countdown-number {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #00e5b5;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.6rem;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.countdown-separator {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ccc;
+    align-self: center;
+}
+
+/* ============================================
+   GRID DE ESCASEZ
+   ============================================ */
+=======
 }
 
 .countdown-number {
@@ -145,10 +250,20 @@
 }
 
 /* Grid de Escasez */
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 .escasez-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+<<<<<<< HEAD
+    margin-bottom: 50px;
+}
+
+.escasez-card {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    padding: 25px;
+=======
     margin-bottom: 40px;
 }
 
@@ -157,10 +272,25 @@
     border-radius: 20px;
     padding: 25px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     transition: all 0.3s ease;
 }
 
 .escasez-card:hover {
+<<<<<<< HEAD
+    transform: translateY(-3px);
+    border-color: #00e5b5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.escasez-card.highlight {
+    background: #f8f9fa;
+    border-color: #00e5b5;
+}
+
+.escasez-icon {
+    margin-bottom: 15px;
+=======
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
@@ -189,6 +319,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .escasez-icon i {
@@ -197,13 +328,41 @@
 }
 
 .escasez-card h3 {
+<<<<<<< HEAD
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+=======
     font-size: 1.2rem;
     margin-bottom: 15px;
     color: #1a1a1a;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* Cupos Bar */
 .cupos-bar {
+<<<<<<< HEAD
+    background: #e9ecef;
+    height: 6px;
+    margin-bottom: 12px;
+}
+
+.cupos-progress {
+    background: #00e5b5;
+    height: 100%;
+    width: 0%;
+    position: relative;
+}
+
+.cupos-progress span {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #00e5b5;
+    position: absolute;
+    right: 0;
+    top: -18px;
+=======
     background: #f0f0f0;
     border-radius: 20px;
     height: 30px;
@@ -222,17 +381,56 @@
     font-size: 0.7rem;
     font-weight: 600;
     transition: width 1s ease;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .cupos-info {
     display: flex;
     justify-content: space-between;
+<<<<<<< HEAD
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+=======
     margin-bottom: 15px;
     font-size: 0.8rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .cupos-restantes {
     color: #ff4757;
+<<<<<<< HEAD
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.cupos-total {
+    color: #999;
+    font-size: 0.7rem;
+}
+
+.escasez-alerta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 12px;
+    margin-top: 12px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.escasez-alerta i {
+    color: #00e5b5;
+}
+
+/* Precio Promocional */
+.precio-promo {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 12px;
+=======
     font-weight: 700;
 }
 
@@ -257,22 +455,64 @@
     align-items: baseline;
     gap: 12px;
     margin-bottom: 15px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     flex-wrap: wrap;
 }
 
 .precio-antiguo {
+<<<<<<< HEAD
+    font-size: 0.9rem;
+=======
     font-size: 1rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #999;
     text-decoration: line-through;
 }
 
 .precio-nuevo {
+<<<<<<< HEAD
+    font-size: 1.6rem;
+=======
     font-size: 1.8rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     font-weight: 800;
     color: #00e5b5;
 }
 
 .descuento {
+<<<<<<< HEAD
+    background: rgba(0, 229, 181, 0.1);
+    color: #00e5b5;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.promo-timer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    font-size: 0.75rem;
+    color: #666;
+    border: 1px solid #f0f0f0;
+}
+
+.promo-timer i {
+    color: #ffc107;
+}
+
+.escasez-bonus {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    color: #00e5b5;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+=======
     background: #ff4757;
     color: white;
     padding: 4px 10px;
@@ -298,17 +538,26 @@
     display: flex;
     align-items: center;
     gap: 8px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* Reservas Recientes */
 .reservas-recientes {
+<<<<<<< HEAD
+    margin-bottom: 12px;
+=======
     margin-bottom: 15px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .reserva-item {
     display: flex;
     align-items: center;
     gap: 10px;
+<<<<<<< HEAD
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+=======
     padding: 10px 0;
     border-bottom: 1px solid #f0f0f0;
     animation: slideIn 0.5s ease;
@@ -323,10 +572,46 @@
         opacity: 1;
         transform: translateX(0);
     }
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .reserva-item i {
     color: #00e5b5;
+<<<<<<< HEAD
+    font-size: 0.8rem;
+}
+
+.reserva-item div {
+    flex: 1;
+}
+
+.reserva-item strong {
+    color: #1a1a1a;
+    font-size: 0.8rem;
+    display: block;
+}
+
+.reserva-item .tiempo {
+    font-size: 0.65rem;
+    color: #999;
+}
+
+.ver-mas-reservas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 10px;
+    margin-top: 8px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.7rem;
+    color: #00e5b5;
+}
+
+/* ============================================
+   BANNER DE ALERTA
+   ============================================ */
+.urgencia-alerta {
+=======
     font-size: 0.9rem;
 }
 
@@ -354,21 +639,104 @@
     background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
     border-radius: 16px;
     padding: 20px 30px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
+<<<<<<< HEAD
+    background: #f8f9fa;
+    padding: 15px 25px;
+    margin-bottom: 50px;
+    border: 1px solid #f0f0f0;
+}
+
+.alerta-icon i {
+    font-size: 1.2rem;
+=======
     margin-bottom: 40px;
 }
 
 .alerta-icon i {
     font-size: 2rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #ffc107;
 }
 
 .alerta-contenido {
     flex: 1;
+<<<<<<< HEAD
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.alerta-contenido strong {
+    color: #ff4757;
+}
+
+.alerta-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid #00e5b5;
+    color: #00e5b5;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.alerta-boton:hover {
+    background: #00e5b5;
+    color: #1a1a1a;
+}
+
+/* ============================================
+   TESTIMONIO
+   ============================================ */
+.urgencia-testimonio {
+    background: #f8f9fa;
+    padding: 30px;
+    margin-bottom: 50px;
+    border-left: 3px solid #00e5b5;
+}
+
+.urgencia-testimonio i {
+    font-size: 1.5rem;
+    color: rgba(0, 229, 181, 0.3);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.urgencia-testimonio p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonio-autor strong {
+    display: block;
+    color: #1a1a1a;
+    font-size: 0.85rem;
+}
+
+.testimonio-autor span {
+    font-size: 0.65rem;
+    color: #999;
+}
+
+/* ============================================
+   CTA FINAL - URGENCIA (VERSIÓN GRANDE)
+   ============================================ */
+
+.urgencia-cta {
+    margin-top: 20px;
+=======
     color: white;
 }
 
@@ -454,36 +822,102 @@
     to {
         left: 100%;
     }
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .cta-urgencia {
     display: flex;
+<<<<<<< HEAD
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    background: #f8f9fa;
+    padding: 35px 45px;
+    border: 1px solid #f0f0f0;
+=======
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
     position: relative;
     z-index: 2;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .cta-texto {
     display: flex;
     align-items: center;
+<<<<<<< HEAD
+    gap: 20px;
+=======
     gap: 15px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .cta-texto i {
     font-size: 2.5rem;
+<<<<<<< HEAD
+    color: #00e5b5;
+}
+
+.cta-texto h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+=======
     color: white;
 }
 
 .cta-texto h4 {
     font-size: 1.3rem;
     color: white;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     margin-bottom: 5px;
 }
 
 .cta-texto p {
+<<<<<<< HEAD
+    font-size: 1rem;
+    color: #666;
+}
+
+.btn-urgencia {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #00e5b5;
+    border: none;
+    padding: 16px 35px;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-urgencia span {
+    background: #1a1a1a;
+    color: #00e5b5;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+.btn-urgencia:hover {
+    background: #00c4a0;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 229, 181, 0.3);
+}
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) {
+    .escasez-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+=======
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -519,12 +953,22 @@
 @media (max-width: 1024px) {
     .escasez-grid {
         grid-template-columns: repeat(2, 1fr);
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }
 
 @media (max-width: 768px) {
+<<<<<<< HEAD
+    .urgencia-section {
+        padding: 40px 0;
+    }
+    
+    .urgencia-banner {
+        padding: 20px;
+=======
     .urgencia-banner {
         padding: 30px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .urgencia-content {
@@ -532,6 +976,10 @@
         text-align: center;
     }
     
+<<<<<<< HEAD
+    .countdown {
+        justify-content: center;
+=======
     .urgencia-texto h2 {
         font-size: 1.5rem;
     }
@@ -545,6 +993,7 @@
     .countdown-number {
         font-size: 1.5rem;
         min-width: 45px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .escasez-grid {
@@ -559,29 +1008,54 @@
     .cta-urgencia {
         flex-direction: column;
         text-align: center;
+<<<<<<< HEAD
+        padding: 20px;
+=======
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .cta-texto {
         flex-direction: column;
+<<<<<<< HEAD
+        text-align: center;
+=======
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }
 
 @media (max-width: 480px) {
+<<<<<<< HEAD
+    .countdown-block {
+        min-width: 50px;
+=======
     .countdown {
         gap: 5px;
     }
     
     .countdown-block {
         min-width: 45px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .countdown-number {
         font-size: 1.2rem;
+<<<<<<< HEAD
+    }
+    
+    .precio-nuevo {
+        font-size: 1.3rem;
+    }
+    
+    .btn-urgencia {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+=======
         padding: 5px 8px;
     }
     
     .btn-urgencia {
         padding: 12px 25px;
         font-size: 0.9rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }

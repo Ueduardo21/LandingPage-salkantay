@@ -30,7 +30,10 @@ if (file_exists(__DIR__ . '/config.php')) {
     <link rel="stylesheet" href="assets/css/hero.css">
     <link rel="stylesheet" href="assets/css/prueba-social.css">
     <link rel="stylesheet" href="assets/css/tour.css">
+<<<<<<< HEAD
+=======
     <link rel="stylesheet" href="assets/css/galeria.css">
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     <link rel="stylesheet" href="assets/css/beneficios.css">
     <link rel="stylesheet" href="assets/css/urgencias.css">
     <link rel="stylesheet" href="assets/css/faq.css">
@@ -45,6 +48,40 @@ if (file_exists(__DIR__ . '/config.php')) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+<<<<<<< HEAD
+
+</head>
+<body>
+<!-- ============================================
+     HEADER - NAVEGACIÓN SIMPLE
+     ============================================ -->
+<header class="header">
+    <div class="container">
+        
+        <a href="#home" class="logo">
+            <span class="logo-icon">🏔️</span>
+            <span class="logo-text">Machu<span>Picchu</span></span>
+        </a>
+        
+        <button class="menu-toggle" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">Inicio</a></li>
+            <li><a href="#social-proof" class="nav-link">Confianza</a></li>
+            <li><a href="#tour" class="nav-link">Tour</a></li>
+            <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
+            <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+        
+        <button class="header-btn" onclick="openReservaModal()">
+            <i class="fas fa-calendar-check"></i> Reservar
+        </button>
+        
+=======
     
     <style>
         /* Reset básico para evitar conflictos entre secciones */
@@ -205,10 +242,67 @@ if (file_exists(__DIR__ . '/config.php')) {
         <button class="mobile-cta" onclick="openReservaModal()">
             <i class="fas fa-calendar-check"></i> Reservar Ahora
         </button>
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     </div>
 </header>
 
 <main>
+<<<<<<< HEAD
+    <!-- Hero Section - Diseño Izquierda + Derecha -->
+    <section id="home" class="hero">
+        <video autoplay muted loop playsinline class="hero-video" poster="assets/galeria/logo.png">
+            <source src="assets/galeria/animacion_cusco.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-grid">
+                
+                <!-- COLUMNA IZQUIERDA: Texto + CTA -->
+                <div class="hero-left">
+                    <h1 class="hero-title">
+                        Descubre <span class="highlight">Machu Picchu</span><br>
+                        en 1 día sin complicaciones
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Transporte ida y vuelta + guía bilingüe + entradas oficiales. 
+                        Sin filas, sin estrés, solo disfruta la experiencia.
+                    </p>
+                    
+                    <button class="btn-primary" onclick="openReservaModal()">
+                        📅 Reservar ahora → Cupos limitados
+                    </button>
+                </div>
+                
+                <!-- COLUMNA DERECHA - Cuadros flotantes individuales -->
+                <div class="hero-right">
+                    
+                    <!-- Cuadro 1: FECHA -->
+                    <div class="floating-box">
+                        <div class="floating-content">
+                            <div class="floating-label">Próxima salida</div>
+                            <div class="floating-value">23 Octubre 2024</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cuadro 2: CALIFICACIÓN -->
+                    <div class="floating-box">
+                        <div class="floating-content">
+                            <div class="floating-label">Calificación</div>
+                            <div class="floating-value">4.9/5 <span>(2,500+ reseñas)</span></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cuadro 3: PRECIO -->
+                    <div class="floating-box">
+                        <div class="floating-content">
+                            <div class="floating-label">Precio por persona</div>
+                            <div class="floating-value">$89 USD <span>/ 1 día</span></div>
+                        </div>
+                    </div>
+                    
+=======
     <!-- Hero Section - Enfoque Conversión -->
     <section id="home" class="hero">
         <!-- Video de fondo -->
@@ -275,6 +369,7 @@ if (file_exists(__DIR__ . '/config.php')) {
                 <div class="hero-trust">
                     <span>✨ 4.9/5 (2,500+ reseñas)</span>
                     <span>🎫 Cancelación gratis 24h</span>
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
                 </div>
                 
             </div>
@@ -282,11 +377,24 @@ if (file_exists(__DIR__ . '/config.php')) {
     </section>
 
     <!-- ============================================
+<<<<<<< HEAD
+        SECCIÓN: PRUEBA SOCIAL (REDISEÑADA)
+=======
         SECCIÓN: PRUEBA SOCIAL (CONFIANZA RÁPIDA)
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
         ============================================ -->
     <section id="social-proof" class="social-proof">
         <div class="container">
             
+<<<<<<< HEAD
+            <!-- Encabezado -->
+            <div class="proof-header">
+                <span class="proof-badge">✨ Confianza verificada</span>
+                <h2>Únete a <span class="highlight">2,500+ viajeros</span> que ya vivieron esta experiencia</h2>
+            </div>
+            
+            <!-- Calificación general -->
+=======
             <!-- Encabezado directo al punto -->
             <div class="proof-header">
                 <span class="proof-badge">✨ Confianza que respalda</span>
@@ -294,6 +402,7 @@ if (file_exists(__DIR__ . '/config.php')) {
             </div>
             
             <!-- ⭐ CALIFICACIÓN GENERAL ⭐ -->
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
             <div class="rating-card">
                 <div class="rating-stars">
                     <div class="stars">
@@ -304,8 +413,14 @@ if (file_exists(__DIR__ . '/config.php')) {
                         <i class="fas fa-star"></i>
                     </div>
                     <span class="rating-number">4.9</span>
+<<<<<<< HEAD
+                    <span class="rating-total">/5</span>
+                </div>
+                <div class="rating-divider"></div>
+=======
                     <span class="rating-total">/ 5</span>
                 </div>
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
                 <div class="rating-details">
                     <div class="rating-platform">
                         <i class="fas fa-trophy"></i>
@@ -322,6 +437,9 @@ if (file_exists(__DIR__ . '/config.php')) {
                 </div>
             </div>
             
+<<<<<<< HEAD
+            <!-- Estadísticas -->
+=======
             <!-- 📸 RESEÑAS DESTACADAS -->
             <div class="reviews-grid">
                 
@@ -417,6 +535,7 @@ if (file_exists(__DIR__ . '/config.php')) {
             </div>
             
             <!-- 📊 ESTADÍSTICAS RÁPIDAS (Para agencia de viajes) -->
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
             <div class="trust-stats">
                 <div class="trust-stat">
                     <div class="stat-icon"><i class="fas fa-clock"></i></div>
@@ -440,7 +559,11 @@ if (file_exists(__DIR__ . '/config.php')) {
                 </div>
             </div>
             
+<<<<<<< HEAD
+            <!-- Certificaciones -->
+=======
             <!-- 🏆 CERTIFICACIONES para Agencia de Viajes -->
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
             <div class="certifications">
                 <div class="cert-item">
                     <i class="fas fa-shield-alt"></i>
@@ -486,7 +609,11 @@ if (file_exists(__DIR__ . '/config.php')) {
                 </div>
             </div>
             
+<<<<<<< HEAD
+            <!-- Call to Action -->
+=======
             <!-- Call to Action sutil -->
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
             <div class="proof-cta">
                 <p><i class="fas fa-star"></i> <strong>2,500+ viajeros</strong> ya confían en nosotros</p>
                 <a href="#tour" class="btn-outline">Ver disponibilidad <i class="fas fa-arrow-right"></i></a>
@@ -780,6 +907,8 @@ if (file_exists(__DIR__ . '/config.php')) {
     </section>
 
     <!-- ============================================
+<<<<<<< HEAD
+=======
         SECCIÓN: GALERÍA (EXPERIENCIA REAL)
         ============================================ -->
     <section id="galeria" class="galeria-section">
@@ -1068,6 +1197,7 @@ if (file_exists(__DIR__ . '/config.php')) {
     </section>
 
     <!-- ============================================
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
         SECCIÓN: BENEFICIOS CLAVE (¿POR QUÉ ELEGIRNOS?)
         ============================================ -->
     <section id="beneficios" class="beneficios-section">
@@ -1137,6 +1267,8 @@ if (file_exists(__DIR__ . '/config.php')) {
 
             </div>
 
+<<<<<<< HEAD
+=======
             <!-- Beneficios Adicionales (Grid 2) -->
             <div class="beneficios-adicionales">
                 <div class="section-subtitle-center">Y también...</div>
@@ -1193,6 +1325,7 @@ if (file_exists(__DIR__ . '/config.php')) {
                 </div>
             </div>
 
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
             <!-- Comparación vs Competencia -->
             <div class="comparison-table">
                 <div class="comparison-header">
@@ -1699,6 +1832,41 @@ if (file_exists(__DIR__ . '/config.php')) {
     </div>
         
     <!-- ============================================
+<<<<<<< HEAD
+     FOOTER SIMPLE
+     ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid" style="grid-template-columns: repeat(2, 1fr);">
+                
+                <div class="footer-col">
+                    <a href="#home" class="footer-logo">
+                        <span class="footer-logo-icon">🏔️</span>
+                        <span class="footer-logo-text">Machu<span>Picchu</span></span>
+                    </a>
+                    <p class="footer-desc">Descubre la magia de Machu Picchu con los mejores guías locales.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">CONTACTO</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i> +51 984 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@machupicchu.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Cusco, Perú</li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> Machu Picchu Tours</p>
+            </div>
+=======
         FOOTER SIMPLE
         ============================================ -->
     <footer class="footer">
@@ -1764,6 +1932,7 @@ if (file_exists(__DIR__ . '/config.php')) {
                 </div>
             </div>
             
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
         </div>
     </footer>
 
@@ -2144,7 +2313,10 @@ if (file_exists(__DIR__ . '/config.php')) {
     <script src="assets/js/hero.js"></script>
     <script src="assets/js/prueba-social.js"></script>
     <script src="assets/js/tour.js"></script>
+<<<<<<< HEAD
+=======
     <script src="assets/js/galeria.js"></script>
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     <script src="assets/js/beneficios.js"></script>
     <script src="assets/js/urgencias.js"></script>
     <script src="https://checkout.culqi.com/js/v4"></script>

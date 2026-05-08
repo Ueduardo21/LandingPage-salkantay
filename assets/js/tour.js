@@ -1,10 +1,16 @@
 // ============================================
+<<<<<<< HEAD
+// SIDEBAR TOUR - CON STICKY
+=======
 // SIDEBAR TOUR - JAVASCRIPT (VERSIÓN SIMPLIFICADA)
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
     
     // ============================================
+<<<<<<< HEAD
+=======
     // ANIMACIONES DEL SIDEBAR AL SCROLL
     // ============================================
     
@@ -25,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ============================================
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     // REVELACIÓN DE ELEMENTOS AL SCROLL
     // ============================================
     
@@ -46,6 +53,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+<<<<<<< HEAD
+    // ============================================
+    // SOMBRA DINÁMICA AL HACER SCROLL
+    // ============================================
+    
+    const sidebarCard = document.querySelector('.sidebar-card');
+    
+    if (sidebarCard) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                sidebarCard.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+            } else {
+                sidebarCard.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    }
+    
+=======
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 });
 
 // ============================================

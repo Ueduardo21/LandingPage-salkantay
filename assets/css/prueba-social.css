@@ -278,6 +278,34 @@
     font-size: 0.8rem;
 }
 
+<<<<<<< HEAD
+/* ============================================
+   CTA FINAL - PRUEBA SOCIAL (VERSIÓN GRANDE)
+   ============================================ */
+
+.proof-cta {
+    text-align: center;
+    padding: 60px 20px;
+    background: transparent;
+}
+
+.proof-cta p {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.proof-cta p i {
+    color: #ffc107;
+    margin-right: 8px;
+    font-size: 1.8rem;
+}
+
+.proof-cta p strong {
+    color: #00e5b5;
+    font-weight: 800;
+=======
 /* CTA final */
 .proof-cta {
     text-align: center;
@@ -294,11 +322,39 @@
 
 .proof-cta i {
     color: #ffc107;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .btn-outline {
     display: inline-flex;
     align-items: center;
+<<<<<<< HEAD
+    gap: 15px;
+    padding: 20px 50px;
+    background: #00e5b5;
+    color: #1a1a1a;
+    text-decoration: none;
+    border: none;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.btn-outline i {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-outline:hover {
+    background: #00c4a0;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 229, 181, 0.4);
+}
+
+.btn-outline:hover i {
+    transform: translateX(8px);
+=======
     gap: 10px;
     padding: 14px 35px;
     background: transparent;
@@ -314,6 +370,7 @@
     background: #00e5b5;
     color: #1a1a1a;
     transform: translateY(-2px);
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* Responsive */
@@ -370,5 +427,9 @@
     .rating-platform {
         justify-content: center;
     }
+<<<<<<< HEAD
+}
+=======
 }
 
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
