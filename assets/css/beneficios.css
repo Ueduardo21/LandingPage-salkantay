@@ -1,5 +1,9 @@
 /* ============================================
+<<<<<<< HEAD
      SECCIÓN BENEFICIOS CLAVE - DISEÑO ELEGANTE
+=======
+     SECCIÓN BENEFICIOS CLAVE
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
      ============================================ */
 
 .beneficios-section {
@@ -20,7 +24,11 @@
     pointer-events: none;
 }
 
+<<<<<<< HEAD
 .beneficios-section .container {
+=======
+.container {
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 20px;
@@ -34,14 +42,24 @@
 
 .section-subtitle {
     display: inline-block;
+<<<<<<< HEAD
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 4px;
+=======
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #00e5b5;
     font-weight: 700;
     margin-bottom: 15px;
     background: rgba(0, 229, 181, 0.1);
     padding: 5px 15px;
+<<<<<<< HEAD
+=======
+    border-radius: 50px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .section-header h2 {
@@ -55,12 +73,19 @@
     color: #00e5b5;
     border-bottom: 3px solid #00e5b5;
     display: inline-block;
+<<<<<<< HEAD
     padding-bottom: 4px;
+=======
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .section-header p {
     color: #666;
+<<<<<<< HEAD
     font-size: 1rem;
+=======
+    font-size: 1.1rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     max-width: 700px;
     margin: 0 auto;
 }
@@ -75,11 +100,21 @@
 
 .beneficio-card {
     background: white;
+<<<<<<< HEAD
     padding: 30px 25px;
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
     border: 1px solid #f0f0f0;
+=======
+    border-radius: 24px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .beneficio-card::before {
@@ -88,15 +123,25 @@
     top: 0;
     left: 0;
     right: 0;
+<<<<<<< HEAD
     height: 3px;
     background: #00e5b5;
+=======
+    height: 4px;
+    background: linear-gradient(90deg, #00e5b5, #00c4a0);
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 .beneficio-card:hover {
+<<<<<<< HEAD
     transform: translateY(-5px);
     border-color: #00e5b5;
+=======
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .beneficio-card:hover::before {
@@ -105,8 +150,13 @@
 
 .beneficio-icon {
     position: relative;
+<<<<<<< HEAD
     width: 70px;
     height: 70px;
+=======
+    width: 80px;
+    height: 80px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
@@ -114,7 +164,11 @@
 }
 
 .beneficio-icon i {
+<<<<<<< HEAD
     font-size: 2rem;
+=======
+    font-size: 2.5rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #00e5b5;
     z-index: 2;
 }
@@ -124,6 +178,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 229, 181, 0.1);
+<<<<<<< HEAD
     transform: rotate(45deg);
     transition: all 0.3s ease;
 }
@@ -137,19 +192,50 @@
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 12px;
+=======
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+}
+
+.beneficio-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #1a1a1a;
 }
 
 .beneficio-card p {
     color: #666;
     line-height: 1.6;
+<<<<<<< HEAD
     margin-bottom: 18px;
     font-size: 0.85rem;
+=======
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .beneficio-badge {
     display: inline-flex;
     align-items: center;
+<<<<<<< HEAD
     gap: 6px;
     padding: 5px 12px;
     background: #f8f9fa;
@@ -157,14 +243,115 @@
     font-weight: 600;
     color: #00e5b5;
     border: 1px solid #e0e0e0;
+=======
+    gap: 8px;
+    padding: 6px 15px;
+    background: #f8f9fa;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #00e5b5;
+}
+
+.beneficio-badge i {
+    font-size: 0.8rem;
+}
+
+/* Beneficios Adicionales */
+.beneficios-adicionales {
+    margin-bottom: 60px;
+}
+
+.section-subtitle-center {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-subtitle-center::before,
+.section-subtitle-center::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00e5b5, transparent);
+}
+
+.section-subtitle-center::before {
+    left: calc(50% - 100px);
+}
+
+.section-subtitle-center::after {
+    right: calc(50% - 100px);
+}
+
+@media (max-width: 768px) {
+    .section-subtitle-center::before,
+    .section-subtitle-center::after {
+        display: none;
+    }
+}
+
+.adicionales-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.adicional-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.adicional-item:hover {
+    transform: translateX(5px);
+    background: #f8f9fa;
+}
+
+.adicional-item i {
+    font-size: 1.5rem;
+    color: #00e5b5;
+    min-width: 40px;
+}
+
+.adicional-item strong {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+}
+
+.adicional-item span {
+    font-size: 0.8rem;
+    color: #888;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* Tabla Comparativa */
 .comparison-table {
     background: white;
+<<<<<<< HEAD
     padding: 30px;
     margin-bottom: 50px;
     border: 1px solid #f0f0f0;
+=======
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .comparison-header {
@@ -173,7 +360,11 @@
 }
 
 .comparison-header h3 {
+<<<<<<< HEAD
     font-size: 1.3rem;
+=======
+    font-size: 1.4rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     margin-bottom: 8px;
     color: #1a1a1a;
 }
@@ -185,7 +376,11 @@
 
 .comparison-header p {
     color: #666;
+<<<<<<< HEAD
     font-size: 0.85rem;
+=======
+    font-size: 0.9rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .table-wrapper {
@@ -199,7 +394,11 @@
 
 .comparison-grid th,
 .comparison-grid td {
+<<<<<<< HEAD
     padding: 12px 15px;
+=======
+    padding: 15px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     text-align: left;
     border-bottom: 1px solid #f0f0f0;
 }
@@ -210,6 +409,17 @@
     background: #f8f9fa;
 }
 
+<<<<<<< HEAD
+=======
+.comparison-grid th:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.comparison-grid th:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 .comparison-grid td:first-child {
     font-weight: 600;
     color: #1a1a1a;
@@ -217,15 +427,24 @@
 
 .comparison-grid td i.fa-check-circle {
     color: #00e5b5;
+<<<<<<< HEAD
+=======
+    font-size: 1.1rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .comparison-grid td i.fa-times-circle {
     color: #ff4757;
+<<<<<<< HEAD
+=======
+    font-size: 1.1rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .comparison-grid td i.fa-clock,
 .comparison-grid td i.fa-question-circle {
     color: #ffc107;
+<<<<<<< HEAD
 }
 
 /* ============================================
@@ -247,10 +466,55 @@
     font-size: 2.5rem;
     color: #00e5b5;
     margin-bottom: 20px;
+=======
+    font-size: 1.1rem;
+}
+
+/* CTA Final */
+.beneficios-cta {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border-radius: 24px;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.beneficios-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 229, 181, 0.1), transparent);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content i {
+    font-size: 3rem;
+    color: #00e5b5;
+    margin-bottom: 15px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     display: inline-block;
 }
 
 .cta-content h4 {
+<<<<<<< HEAD
     font-size: 2rem;
     font-weight: 700;
     color: #1a1a1a;
@@ -263,11 +527,22 @@
     font-size: 1.1rem;
     margin-bottom: 30px;
     line-height: 1.5;
+=======
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .btn-cta {
     display: inline-flex;
     align-items: center;
+<<<<<<< HEAD
     gap: 12px;
     padding: 14px 38px;
     background: #1a1a1a;
@@ -293,13 +568,37 @@
 
 .btn-cta:hover i {
     transform: translateX(6px);
+=======
+    gap: 10px;
+    padding: 14px 35px;
+    background: #00e5b5;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 229, 181, 0.3);
+    background: #00f5c5;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     .beneficios-grid {
         grid-template-columns: repeat(2, 1fr);
+<<<<<<< HEAD
         gap: 20px;
+=======
+    }
+    
+    .adicionales-grid {
+        grid-template-columns: repeat(2, 1fr);
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }
 
@@ -317,14 +616,26 @@
         gap: 20px;
     }
     
+<<<<<<< HEAD
+=======
+    .adicionales-grid {
+        grid-template-columns: 1fr;
+    }
+    
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     .comparison-table {
         padding: 20px;
     }
     
     .comparison-grid th,
     .comparison-grid td {
+<<<<<<< HEAD
         padding: 8px 10px;
         font-size: 0.8rem;
+=======
+        padding: 10px;
+        font-size: 0.85rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
     
     .beneficios-cta {
@@ -332,30 +643,59 @@
     }
     
     .cta-content h4 {
+<<<<<<< HEAD
         font-size: 1.2rem;
     }
     
     .btn-cta {
         padding: 10px 24px;
         font-size: 0.85rem;
+=======
+        font-size: 1.3rem;
+    }
+    
+    .btn-cta {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }
 
 @media (max-width: 480px) {
     .comparison-grid th,
     .comparison-grid td {
+<<<<<<< HEAD
         padding: 6px 8px;
         font-size: 0.7rem;
+=======
+        padding: 8px;
+        font-size: 0.75rem;
+    }
+    
+    .adicional-item {
+        padding: 12px 15px;
+    }
+    
+    .adicional-item i {
+        font-size: 1.2rem;
+        min-width: 30px;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     }
 }
 
 /* Animaciones al scroll */
+<<<<<<< HEAD
 .beneficio-card {
+=======
+.beneficio-card,
+.adicional-item {
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s ease;
 }
 
+<<<<<<< HEAD
 .beneficio-card.revealed {
     opacity: 1;
     transform: translateY(0);
@@ -365,3 +705,10 @@
 .beneficio-card:nth-child(2) { transition-delay: 0.2s; }
 .beneficio-card:nth-child(3) { transition-delay: 0.3s; }
 .beneficio-card:nth-child(4) { transition-delay: 0.4s; }
+=======
+.beneficio-card.revealed,
+.adicional-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b

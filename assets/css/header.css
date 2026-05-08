@@ -1,11 +1,17 @@
 /* ============================================
+<<<<<<< HEAD
    HEADER - NAVEGACIÓN ELEGANTE (MEJORADO)
    ============================================ */
+=======
+     HEADER SIMPLE Y OPTIMIZADO
+     ============================================ */
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 
 .header {
     position: fixed;
     top: 0;
     left: 0;
+<<<<<<< HEAD
     width: 100%;
     z-index: 1000;
     background: transparent;
@@ -58,21 +64,88 @@
 }
 
 .logo-text span {
+=======
+    right: 0;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0.8rem 0;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    padding: 0.5rem 0;
+    background: rgba(26, 26, 26, 0.98);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* ============================================
+     LOGO
+     ============================================ */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.02);
+}
+
+.header-logo i {
+    font-size: 1.6rem;
+    color: #00e5b5;
+}
+
+.logo-highlight {
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #00e5b5;
 }
 
 /* ============================================
+<<<<<<< HEAD
    NAVEGACIÓN - TEXTO MÁS GRANDE
    ============================================ */
 .nav-menu {
     display: flex;
     gap: 2.2rem;
     list-style: none;
+=======
+     MENÚ DESKTOP
+     ============================================ */
+.header-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     margin: 0;
     padding: 0;
 }
 
 .nav-link {
+<<<<<<< HEAD
     color: white;
     text-decoration: none;
     font-size: 1rem;
@@ -80,14 +153,28 @@
     transition: all 0.3s ease;
     position: relative;
     padding: 0.5rem 0;
+=======
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
+<<<<<<< HEAD
     bottom: 0;
     left: 0;
     width: 0%;
+=======
+    bottom: -5px;
+    left: 0;
+    width: 0;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     height: 2px;
     background: #00e5b5;
     transition: width 0.3s ease;
@@ -98,11 +185,17 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
 .nav-link:hover {
+=======
+.nav-link:hover,
+.nav-link.active {
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     color: #00e5b5;
 }
 
 /* ============================================
+<<<<<<< HEAD
    BOTÓN DE RESERVA - ÁMBAR (MÁS GRANDE)
    ============================================ */
 .header-btn {
@@ -376,4 +469,180 @@
 /* Prevenir scroll cuando el menú está abierto */
 body.menu-open {
     overflow: hidden;
+=======
+     BOTÓN CTA
+     ============================================ */
+.header-cta {
+    background: linear-gradient(135deg, #00e5b5, #00c4a0);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.header-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 229, 181, 0.3);
+}
+
+/* ============================================
+     BOTÓN MOBILE
+     ============================================ */
+.header-mobile-btn {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header-mobile-btn:hover {
+    background: #00e5b5;
+    color: #1a1a1a;
+}
+
+/* ============================================
+     MENÚ MOBILE
+     ============================================ */
+.header-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: #1a1a1a;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.header-mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.mobile-menu-header i {
+    color: #00e5b5;
+    font-size: 1.4rem;
+}
+
+.mobile-menu-close {
+    margin-left: auto;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-close:hover {
+    background: #ff4757;
+}
+
+.mobile-nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    color: #00e5b5;
+    padding-left: 10px;
+}
+
+.mobile-cta {
+    background: linear-gradient(135deg, #00e5b5, #00c4a0);
+    border: none;
+    padding: 12px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+}
+
+/* ============================================
+     RESPONSIVE
+     ============================================ */
+@media (max-width: 768px) {
+    .header-nav,
+    .header-cta {
+        display: none;
+    }
+    
+    .header-mobile-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .header-container {
+        padding: 0 20px;
+    }
+    
+    .header-logo {
+        font-size: 1.1rem;
+    }
+    
+    .header-logo i {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.6rem 0;
+    }
+    
+    .header-logo span {
+        font-size: 0.9rem;
+    }
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }

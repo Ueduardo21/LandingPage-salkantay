@@ -1,10 +1,37 @@
 // ============================================
+<<<<<<< HEAD
 // SIDEBAR TOUR - CON STICKY
+=======
+// SIDEBAR TOUR - JAVASCRIPT (VERSIÓN SIMPLIFICADA)
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
     
     // ============================================
+<<<<<<< HEAD
+=======
+    // ANIMACIONES DEL SIDEBAR AL SCROLL
+    // ============================================
+    
+    const sidebar = document.querySelector('.tour-sidebar');
+    const sidebarCard = document.querySelector('.sidebar-card');
+    
+    if (sidebar && sidebarCard) {
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const sidebarTop = sidebar.offsetTop;
+            
+            if (scrollPosition > sidebarTop - 20) {
+                sidebarCard.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+            } else {
+                sidebarCard.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    }
+    
+    // ============================================
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
     // REVELACIÓN DE ELEMENTOS AL SCROLL
     // ============================================
     
@@ -26,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+<<<<<<< HEAD
     // ============================================
     // SOMBRA DINÁMICA AL HACER SCROLL
     // ============================================
@@ -42,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+=======
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 });
 
 // ============================================

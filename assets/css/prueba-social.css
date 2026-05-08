@@ -278,6 +278,7 @@
     font-size: 0.8rem;
 }
 
+<<<<<<< HEAD
 /* ============================================
    CTA FINAL - PRUEBA SOCIAL (VERSIÓN GRANDE)
    ============================================ */
@@ -304,11 +305,30 @@
 .proof-cta p strong {
     color: #00e5b5;
     font-weight: 800;
+=======
+/* CTA final */
+.proof-cta {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border-radius: 20px;
+    color: white;
+}
+
+.proof-cta p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.proof-cta i {
+    color: #ffc107;
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 .btn-outline {
     display: inline-flex;
     align-items: center;
+<<<<<<< HEAD
     gap: 15px;
     padding: 20px 50px;
     background: #00e5b5;
@@ -334,6 +354,23 @@
 
 .btn-outline:hover i {
     transform: translateX(8px);
+=======
+    gap: 10px;
+    padding: 14px 35px;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border: 2px solid #00e5b5;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-outline:hover {
+    background: #00e5b5;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
 }
 
 /* Responsive */
@@ -390,4 +427,9 @@
     .rating-platform {
         justify-content: center;
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 4ddf37f2b57f811b1267c9a3529529a17241979b
